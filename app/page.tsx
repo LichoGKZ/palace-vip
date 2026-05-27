@@ -11,7 +11,8 @@ export default function PalaceVIPLanding() {
   const [loading, setLoading] = useState(false)
   const [approved, setApproved] = useState(false)
   const [email, setEmail] = useState('')
-
+  const [previewOpen, setPreviewOpen] = useState(false)
+  const [selectedChannel, setSelectedChannel] = useState('')
   const handleAccess = async () => {
     if (window.fbq) {
       window.fbq('track', 'AddPaymentInfo', {
@@ -55,6 +56,7 @@ export default function PalaceVIPLanding() {
 
   
   const testimonials = [
+    
     {
       user: "lucas.exe",
       text: "pensé que era humo pero está explotado",
@@ -76,7 +78,15 @@ export default function PalaceVIPLanding() {
       color: "from-fuchsia-400 to-violet-600",
     },
   ]
-
+const previewChannels = [
+  '# albere',
+  '# alaska',
+  '# mika-rios',
+  '# milica',
+  '# martu-boden',
+  '# tuli-acosta',
+  '# kiara-tuliano',
+]
   return (
     <>
   <Script
@@ -188,13 +198,13 @@ export default function PalaceVIPLanding() {
                 {" "}
                 privado{" "}
               </span>
-              más activo de Argentina.
+              con mas contenido de Argentina.
             </h1>
 
             {/* SUBTEXT */}
             <p className="mt-8 text-zinc-300 text-xl leading-relaxed max-w-xl">
               Accedé a filtraciones exclusivas, contenido premium,
-              actualizaciones diarias y una comunidad privada activa 24/7.
+              actualizaciones diarias y una comunidad activa 24/7.
             </p>
 
             {/* SOCIAL STATS */}
@@ -231,8 +241,18 @@ export default function PalaceVIPLanding() {
                 </span>
               </a>
 
-              <button className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-xl px-10 py-6 text-lg font-semibold hover:bg-white/[0.08] transition-all">
-                Ver preview
+              <button
+                onClick={() => setPreviewOpen(true)}
+                className="group relative overflow-hidden rounded-[2rem] border border-fuchsia-500/20 bg-white/[0.04] backdrop-blur-xl px-10 py-6 text-lg font-semibold hover:bg-white/[0.08] transition-all"
+              >
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.25),transparent_60%)]" />
+
+                <span className="relative z-10 flex items-center justify-center gap-3">
+                  Ver preview
+                  <span className="group-hover:translate-x-1 transition-transform">
+                    →
+                  </span>
+                </span>
               </button>
             </div>
 
@@ -282,12 +302,12 @@ export default function PalaceVIPLanding() {
                 <div className="w-44 border-r border-white/5 bg-black/30 p-4 hidden md:block">
                   <div className="space-y-2 text-sm">
                     {[
-                      "# novedades",
-                      "# filtraciones",
-                      "# famosas",
-                      "# onlyfans",
-                      "# pedidos",
-                      "# drops",
+                      "# albere",
+                      "# milica",
+                      "# mika-rios",
+                      "# martu-boden",
+                      "# tuli-acosta",
+                      "# kiara-tuliano",
                     ].map((channel) => (
                       <div
                         key={channel}
@@ -574,7 +594,209 @@ export default function PalaceVIPLanding() {
         }
       `}</style>
 
+{/* PREVIEW MODAL */}
+{previewOpen && (
+  <div className="fixed inset-0 z-[998] bg-black/90 backdrop-blur-2xl flex items-center justify-center p-4">
 
+    <div className="relative w-full max-w-6xl h-[85vh] rounded-[2.5rem] overflow-hidden border border-white/10 bg-[#0a0a0a] shadow-[0_0_120px_rgba(217,70,239,0.25)]">
+
+      {/* GLOW */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.18),transparent_45%)]" />
+
+      {/* CLOSE */}
+      <button
+        onClick={() => setPreviewOpen(false)}
+        className="absolute top-5 right-5 z-50 w-11 h-11 rounded-full bg-white/5 hover:bg-white/10 transition-all"
+      >
+        ✕
+      </button>
+
+      <div className="relative z-10 flex h-full">
+
+        {/* SIDEBAR */}
+        <div className="w-[320px] border-r border-white/10 bg-black/40 backdrop-blur-2xl p-5 overflow-y-auto">
+
+          {/* SERVER */}
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-violet-700 flex items-center justify-center font-black text-xl shadow-[0_0_30px_rgba(217,70,239,0.4)]">
+              P
+            </div>
+
+            <div>
+              <div className="font-black text-lg">
+                PALACE VIP
+              </div>
+
+              <div className="text-xs text-zinc-500">
+                servidor privado
+              </div>
+            </div>
+          </div>
+
+          {/* CATEGORY */}
+          <div className="text-xs uppercase tracking-[0.2em] text-zinc-600 mb-4">
+            previews exclusivos
+          </div>
+
+          {/* CHANNELS */}
+          <div className="space-y-2">
+            {previewChannels.map((channel) => (
+              <button
+                key={channel}
+                onClick={() => setSelectedChannel(channel)}
+                className={`w-full text-left px-4 py-3 rounded-2xl transition-all duration-300 flex items-center gap-3 ${
+                  selectedChannel === channel
+                    ? 'bg-gradient-to-r from-fuchsia-500/20 to-violet-500/20 border border-fuchsia-500/20 text-white shadow-[0_0_30px_rgba(217,70,239,0.15)]'
+                    : 'hover:bg-white/[0.05] text-zinc-400'
+                }`}
+              >
+                <span className="text-zinc-500">#</span>
+
+                <span className="font-semibold">
+                  {channel.replace('# ', '')}
+                </span>
+
+                <div className="ml-auto w-2 h-2 rounded-full bg-fuchsia-400 animate-pulse" />
+              </button>
+            ))}
+          </div>
+
+        </div>
+
+        {/* CONTENT */}
+        <div className="flex-1 relative overflow-hidden">
+
+          {!selectedChannel ? (
+            <div className="h-full flex flex-col items-center justify-center text-center px-10">
+
+              <div className="w-32 h-32 rounded-[2rem] bg-gradient-to-br from-fuchsia-500/20 to-violet-600/20 border border-fuchsia-500/20 flex items-center justify-center text-6xl shadow-[0_0_60px_rgba(217,70,239,0.15)]">
+                🔒
+              </div>
+
+              <h2 className="mt-10 text-5xl font-black">
+                Elegí un canal
+              </h2>
+
+              <p className="mt-5 text-zinc-400 text-xl max-w-xl leading-relaxed">
+                Explorá previews reales del servidor privado y desbloqueá acceso completo al contenido VIP.
+              </p>
+
+            </div>
+          ) : (
+            <div className="h-full flex flex-col">
+
+              {/* TOP */}
+              <div className="border-b border-white/10 px-8 py-5 bg-black/30 backdrop-blur-xl flex items-center justify-between">
+
+                <div>
+                  <div className="text-2xl font-black">
+                    {selectedChannel}
+                  </div>
+
+                  <div className="text-sm text-zinc-500 mt-1">
+                    contenido premium privado
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 text-sm text-zinc-500">
+                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  237 viendo ahora
+                </div>
+
+              </div>
+
+              {/* MAIN */}
+              <div className="flex-1 p-8 overflow-y-auto">
+
+                <div className="grid md:grid-cols-3 gap-6">
+
+                  {[1,2,3,4,5,6].map((i) => (
+                    <div
+                      key={i}
+                      className="group relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 bg-gradient-to-br from-zinc-900 to-black hover:scale-[1.02] transition-all duration-500"
+                    >
+
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.25),transparent_45%)]" />
+
+                      <div className="absolute inset-0 backdrop-blur-[18px] flex flex-col items-center justify-center">
+
+                        <div className="text-6xl mb-5 group-hover:scale-110 transition-transform">
+                          🔒
+                        </div>
+
+                        <div className="text-2xl font-black">
+                          Contenido VIP
+                        </div>
+
+                        <div className="mt-3 text-sm text-zinc-500">
+                          desbloqueá el acceso completo
+                        </div>
+
+                      </div>
+
+                    </div>
+                  ))}
+
+                </div>
+
+                {/* CTA */}
+                <div className="mt-12 rounded-[2.5rem] border border-fuchsia-500/20 bg-gradient-to-b from-fuchsia-500/10 to-black p-10 text-center shadow-[0_0_80px_rgba(217,70,239,0.12)]">
+
+                  <div className="inline-flex items-center gap-3 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/10 px-5 py-3 text-sm text-fuchsia-200">
+                    🔥 acceso limitado hoy
+                  </div>
+
+                  <h3 className="mt-7 text-5xl font-black leading-[0.95]">
+                    Para ver el contenido completo
+                    <br />
+                    necesitás acceso VIP.
+                  </h3>
+
+                  <p className="mt-5 text-zinc-400 text-lg max-w-2xl mx-auto">
+                    Entrá ahora al servidor privado y desbloqueá todos los canales premium, filtraciones y contenido exclusivo.
+                  </p>
+
+                  <button
+                    onClick={() => {
+                      setPreviewOpen(false)
+
+                      if (window.fbq) {
+                        window.fbq('track', 'InitiateCheckout', {
+                          value: 3700,
+                          currency: 'ARS',
+                        })
+                      }
+
+                      setOpen(true)
+                    }}
+                    className="mt-10 group relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-12 py-6 text-2xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.02] transition-all duration-300"
+                  >
+
+                    <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                    <span className="relative z-10 flex items-center justify-center">
+                      Desbloquear acceso ahora
+                      <span className="ml-3 group-hover:translate-x-1 transition-transform">
+                        →
+                      </span>
+                    </span>
+
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+          )}
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+)}
       {/* ACCESS MODAL */}
 {open && (
   <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-xl p-4">
