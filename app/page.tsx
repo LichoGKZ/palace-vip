@@ -544,6 +544,22 @@ export default function PalaceVIPLanding() {
         <div className="text-zinc-500 text-sm">
           PALACE VIP • comunidad privada exclusiva • acceso limitado
         </div>
+
+        <div className="mt-4 flex justify-center gap-6 text-sm">
+          <a
+            href="/privacy"
+            className="text-zinc-500 hover:text-white transition"
+          >
+            Privacy Policy
+          </a>
+
+          <a
+            href="/terms"
+            className="text-zinc-500 hover:text-white transition"
+          >
+            Terms & Conditions
+          </a>
+        </div>
       </footer>
 
       {/* TICKER ANIMATION */}
