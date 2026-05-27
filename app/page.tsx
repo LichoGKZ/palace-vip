@@ -710,7 +710,7 @@ const previewChannels = [
 
                 <div className="grid md:grid-cols-3 gap-6">
 
-                  {[1,2,3,4,5,6].map((i) => (
+                  {[1,2,3].map((i) => (
                     <div
                       key={i}
                       className="group relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 bg-gradient-to-br from-zinc-900 to-black hover:scale-[1.02] transition-all duration-500"
