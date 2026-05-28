@@ -856,10 +856,6 @@ const previewChannels = [
           {previewLocked ? (
             <div className="h-full flex flex-col items-center justify-center text-center px-10">
 
-              <div className="w-36 h-36 rounded-[2.5rem] bg-gradient-to-br from-fuchsia-500/20 to-violet-600/20 border border-fuchsia-500/20 flex items-center justify-center text-6xl shadow-[0_0_80px_rgba(217,70,239,0.18)]">
-                🔒
-              </div>
-
               <h2 className="mt-6 md:mt-10 text-2xl md:text-5xl font-black leading-[1.05] px-2">
                 Este no es un discord mas...
                 <br />
@@ -895,7 +891,7 @@ const previewChannels = [
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 <span className="relative z-10 flex items-center justify-center">
-                  Entra al discord
+                  Acceder
                   <span className="ml-3 group-hover:translate-x-1 transition-transform">
                     →
                   </span>
