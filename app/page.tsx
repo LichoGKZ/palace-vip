@@ -370,15 +370,15 @@ const previewChannels = [
             {/* BADGE */}
             <div className="inline-flex items-center gap-3 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/10 backdrop-blur-xl px-5 py-3 text-sm text-fuchsia-200 mb-8 shadow-lg shadow-fuchsia-500/10">
               <div className="w-2 h-2 rounded-full bg-fuchsia-400 animate-pulse" />
-              acceso VIP privado • cupos limitados hoy
+              Todas las famosas de Argentina
             </div>
 
             {/* TITLE */}
             <h1 className="text-3xl leading-tight md:text-6xl font-black tracking-tight">
-              El servidor
+              El servidor de
               <span className="bg-gradient-to-r from-fuchsia-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">
                 {" "}
-                privado{" "}
+                Discord{" "}
               </span>
               con mas contenido de Argentina.
             </h1>
