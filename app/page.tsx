@@ -3,7 +3,7 @@ import Script from 'next/script'
 import { useState } from 'react'
 import { useEffect, useRef } from "react";
 
-const scrollRef = useRef(null);
+
 import Image from "next/image";
 import lockIcon from "@/public/lock.png";
 
@@ -21,6 +21,7 @@ export default function PalaceVIPLanding() {
   const [selectedChannel, setSelectedChannel] = useState('')
   const [previewLocked, setPreviewLocked] = useState(false)
   const [previewTimer, setPreviewTimer] = useState<NodeJS.Timeout | null>(null)
+  const scrollRef = useRef(null);
   const sendLog = async (type: string, extra: any = {}) => {
   try {
     await fetch('/api/log', {
