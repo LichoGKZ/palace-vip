@@ -92,7 +92,7 @@ useEffect(() => {
   const handleAccess = async () => {
     if (window.fbq) {
       window.fbq('track', 'AddPaymentInfo', {
-        value: 3700,
+        value: 4600,
         currency: 'ARS',
       })
     }
@@ -109,7 +109,7 @@ useEffect(() => {
           'track',
           'Purchase',
           {
-            value: 3700,
+            value: 4600,
             currency: 'ARS',
             content_name: 'PALACE VIP',
             content_type: 'product',
@@ -732,7 +732,7 @@ const previewChannels = [
                 onClick={() => {
                 if (window.fbq) {
                   window.fbq('track', 'InitiateCheckout', {
-                    value: 3700,
+                    value: 4600,
                     currency: 'ARS',
                   })
                 }
@@ -911,7 +911,7 @@ const previewChannels = [
 
                   if (window.fbq) {
                     window.fbq('track', 'InitiateCheckout', {
-                      value: 3700,
+                      value: 4600,
                       currency: 'ARS',
                     })
                   }
@@ -1015,7 +1015,7 @@ const previewChannels = [
 
                       if (window.fbq) {
                         window.fbq('track', 'InitiateCheckout', {
-                          value: 3700,
+                          value: 4600,
                           currency: 'ARS',
                         })
                       }
