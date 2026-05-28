@@ -103,23 +103,27 @@ useEffect(() => {
 
     const eventId = crypto.randomUUID()
 
-    if (window.fbq) {
-      window.fbq(
-        'track',
-        'Purchase',
-        {
-          value: 3700,
-          currency: 'ARS',
-          content_name: 'PALACE VIP',
-          content_type: 'product',
-          em: email,
-        },
-        {
-          eventID: eventId,
-        }
-      )
+    if (typeof window !== 'undefined' && window.fbq) {
+      try {
+        window.fbq(
+          'track',
+          'Purchase',
+          {
+            value: 3700,
+            currency: 'ARS',
+            content_name: 'PALACE VIP',
+            content_type: 'product',
+          },
+          {
+            eventID: eventId,
+          }
+        )
+    
+        console.log('[META] Purchase enviado', eventId)
+      } catch (err) {
+        console.error('[META] Error enviando Purchase', err)
+      }
     }
-
   sendLog('pago', {
     email,
   })
