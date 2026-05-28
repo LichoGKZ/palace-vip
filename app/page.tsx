@@ -1,6 +1,7 @@
 'use client'
 import Script from 'next/script'
 import { useState } from 'react'
+import { useEffect } from 'react'
 declare global {
   interface Window {
     fbq: any
@@ -13,6 +14,53 @@ export default function PalaceVIPLanding() {
   const [email, setEmail] = useState('')
   const [previewOpen, setPreviewOpen] = useState(false)
   const [selectedChannel, setSelectedChannel] = useState('')
+  const sendLog = async (type: string, extra: any = {}) => {
+  try {
+    await fetch('/api/log', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+
+      body: JSON.stringify({
+        type,
+
+        url: window.location.href,
+        referrer: document.referrer,
+
+        userAgent: navigator.userAgent,
+        language: navigator.language,
+        platform: navigator.platform,
+
+        timezone:
+          Intl.DateTimeFormat().resolvedOptions().timeZone,
+
+        screen: `${window.innerWidth}x${window.innerHeight}`,
+
+        ...extra,
+      }),
+    })
+  } catch (err) {
+    console.error(err)
+  }
+}
+useEffect(() => {
+  sendLog('visita')
+
+  const handleError = (event: ErrorEvent) => {
+    sendLog('error', {
+      message: event.message,
+      source: event.filename,
+    })
+  }
+
+  window.addEventListener('error', handleError)
+
+  return () => {
+    window.removeEventListener('error', handleError)
+  }
+}, [])
+
   const handleAccess = async () => {
     if (window.fbq) {
       window.fbq('track', 'AddPaymentInfo', {
@@ -340,7 +388,11 @@ const previewChannels = [
               </a>
 
               <button
-                onClick={() => setPreviewOpen(true)}
+                onClick={() => {
+                  sendLog('preview')
+
+                  setPreviewOpen(true)
+                }}
                 className="group relative overflow-hidden rounded-[2rem] border border-fuchsia-500/20 bg-white/[0.04] backdrop-blur-xl px-10 py-6 text-lg font-semibold hover:bg-white/[0.08] transition-all"
               >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.25),transparent_60%)]" />
@@ -633,7 +685,7 @@ const previewChannels = [
                     currency: 'ARS',
                   })
                 }
-
+                sendLog('checkout')
                 setOpen(true)
               }}
                 className="group relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-14 py-7 text-2xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.02] transition-all duration-300"
@@ -741,7 +793,13 @@ const previewChannels = [
             {previewChannels.map((channel) => (
               <button
                 key={channel}
-                onClick={() => setSelectedChannel(channel)}
+                onClick={() => {
+                  setSelectedChannel(channel)
+
+                  sendLog('preview', {
+                    channel,
+                  })
+                }}
                 className={`w-full text-left px-4 py-3 rounded-2xl transition-all duration-300 flex items-center gap-3 ${
                   selectedChannel === channel
                     ? 'bg-gradient-to-r from-fuchsia-500/20 to-violet-500/20 border border-fuchsia-500/20 text-white shadow-[0_0_30px_rgba(217,70,239,0.15)]'
@@ -1000,7 +1058,7 @@ const previewChannels = [
               <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <span className="relative z-10 flex items-center justify-center">
-
+              
                 {loading ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-3" />
