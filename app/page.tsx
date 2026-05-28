@@ -1,9 +1,12 @@
 'use client'
 import Script from 'next/script'
 import { useState } from 'react'
-import { useEffect } from 'react'
+import { useEffect, useRef } from "react";
+
+const scrollRef = useRef(null);
 import Image from "next/image";
 import lockIcon from "@/public/lock.png";
+
 declare global {
   interface Window {
     fbq: any
@@ -64,7 +67,26 @@ useEffect(() => {
   return () => {
     window.removeEventListener('error', handleError)
   }
+  
 }, [])
+
+useEffect(() => {
+  sendLog('visita')
+
+  const handleError = (event: ErrorEvent) => {
+    sendLog('error', {
+      message: event.message,
+      source: event.filename,
+    })
+  }
+
+  window.addEventListener('error', handleError)
+
+  return () => {
+    window.removeEventListener('error', handleError)
+  }
+}, [])
+
 
   const handleAccess = async () => {
     if (window.fbq) {
@@ -821,7 +843,10 @@ const previewChannels = [
           </div>
 
           {/* CHANNELS */}
-          <div className="space-y-2">
+          <div
+            ref={scrollRef}
+            className="space-y-2 overflow-hidden h-[500px]"
+          >
             {previewChannels.map((channel) => (
               <button
                 key={channel}
