@@ -14,6 +14,8 @@ export default function PalaceVIPLanding() {
   const [email, setEmail] = useState('')
   const [previewOpen, setPreviewOpen] = useState(false)
   const [selectedChannel, setSelectedChannel] = useState('')
+  const [previewLocked, setPreviewLocked] = useState(false)
+  const [previewTimer, setPreviewTimer] = useState<NodeJS.Timeout | null>(null)
   const sendLog = async (type: string, extra: any = {}) => {
   try {
     await fetch('/api/log', {
@@ -44,6 +46,7 @@ export default function PalaceVIPLanding() {
     console.error(err)
   }
 }
+
 useEffect(() => {
   sendLog('visita')
 
@@ -401,6 +404,16 @@ const previewChannels = [
                   sendLog('preview')
 
                   setPreviewOpen(true)
+                  setPreviewLocked(false)
+
+                  sendLog('preview_open')
+
+                  // después de 2 segundos se bloquea
+                  const timer = setTimeout(() => {
+                    setPreviewLocked(true)
+                  }, 2000)
+
+                  setPreviewTimer(timer)
                 }}
                 className="group relative overflow-hidden rounded-[2rem] border border-fuchsia-500/20 bg-white/[0.04] backdrop-blur-xl px-10 py-6 text-lg font-semibold hover:bg-white/[0.08] transition-all"
               >
@@ -764,7 +777,15 @@ const previewChannels = [
 
       {/* CLOSE */}
       <button
-        onClick={() => setPreviewOpen(false)}
+        onClick={() => {
+          setPreviewOpen(false)
+          setPreviewLocked(false)
+
+          if (previewTimer) {
+            clearTimeout(previewTimer)
+            setPreviewTimer(null)
+          }
+        }}
         className="absolute top-5 right-5 z-50 w-11 h-11 rounded-full bg-white/5 hover:bg-white/10 transition-all"
       >
         ✕
@@ -829,9 +850,10 @@ const previewChannels = [
         </div>
 
         {/* CONTENT */}
+      
         <div className="flex-1 relative overflow-hidden">
 
-          {!selectedChannel ? (
+          {previewLocked ? (
             <div className="h-full flex flex-col items-center justify-center text-center px-10">
 
               <div className="w-32 h-32 rounded-[2rem] bg-gradient-to-br from-fuchsia-500/20 to-violet-600/20 border border-fuchsia-500/20 flex items-center justify-center text-6xl shadow-[0_0_60px_rgba(217,70,239,0.15)]">
