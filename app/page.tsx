@@ -791,10 +791,10 @@ const previewChannels = [
         ✕
       </button>
 
-      <div className="relative z-10 flex h-full">
+      <div className="relative z-10 flex flex-col md:flex-row h-full">
 
         {/* SIDEBAR */}
-        <div className="w-[320px] border-r border-white/10 bg-black/40 backdrop-blur-2xl p-5 overflow-y-auto">
+        <div className="w-full md:w-[320px] border-r md:border-r border-b md:border-b-0 border-white/10 bg-black/40 backdrop-blur-2xl p-4 md:p-5 overflow-y-auto max-h-[40vh] md:max-h-none">
 
           {/* SERVER */}
           <div className="flex items-center gap-4 mb-8">
@@ -851,7 +851,7 @@ const previewChannels = [
 
         {/* CONTENT */}
       
-        <div className="flex-1 relative overflow-hidden">
+        <div className="flex-1 relative overflow-hidden min-h-[60vh] md:min-h-0">
 
           {previewLocked ? (
             <div className="h-full flex flex-col items-center justify-center text-center px-10">
@@ -860,24 +860,20 @@ const previewChannels = [
                 🔒
               </div>
 
-              <h2 className="mt-10 text-5xl font-black leading-[0.95]">
-                Esto no es contenido común.
+              <h2 className="mt-6 md:mt-10 text-2xl md:text-5xl font-black leading-[1.05] px-2">
+                Este no es un discord mas...
                 <br />
-                Es acceso restringido.
+                Esto es mejor que OnlyFans.
               </h2>
 
-              <p className="mt-6 text-zinc-300 text-xl max-w-2xl leading-relaxed">
-                Estás viendo solo una muestra. Adentro hay canales privados activos 24/7 con contenido exclusivo, filtraciones y material que no se publica en ningún otro lado.
+              <p className="mt-4 md:mt-6 text-sm md:text-xl text-zinc-300 max-w-2xl leading-relaxed px-2">
+                Mas de 200 artistas argentinas, mas de 17mil archivos. Todo en un solo lugar.
               </p>
 
               <div className="mt-8 flex flex-col items-center gap-3 text-sm text-zinc-400">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  237 personas activas ahora mismo
-                </div>
-
-                <div className="flex items-center gap-2">
-                  🔥 acceso limitado — plazas casi agotadas
+                  18mil Usuarios en discord
                 </div>
               </div>
 
@@ -894,7 +890,7 @@ const previewChannels = [
 
                   setOpen(true)
                 }}
-                className="mt-10 group relative overflow-hidden rounded-[2.2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-14 py-6 text-2xl font-black shadow-[0_0_90px_rgba(217,70,239,0.4)] hover:scale-[1.03] transition-all duration-300"
+                className="mt-8 md:mt-10 w-full md:w-auto group relative overflow-hidden rounded-[2.2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-14 py-6 text-2xl font-black shadow-[0_0_90px_rgba(217,70,239,0.4)] hover:scale-[1.03] transition-all duration-300"
               >
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
