@@ -92,8 +92,17 @@ useEffect(() => {
       )
     }
 
-    setLoading(false)
-    setApproved(true)
+  sendLog('pago', {
+    email,
+  })
+
+  sendLog('purchase', {
+    email,
+    eventId,
+  })
+
+  setLoading(false)
+  setApproved(true)
   }
   const fakeActivity = [
     "mati.vip desbloqueó acceso hace 2 min",

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const WEBHOOKS = {
-  visitas:
+  visita:
     'https://discord.com/api/webhooks/1509394578317381653/lwrIJ30cEm2iEIkTo2EjgnTF-dyzamlNFLg8vR5MgZq_xekrS5fGzkxrR-W3Dm-CCEyL',
 
   preview:
@@ -10,13 +10,13 @@ const WEBHOOKS = {
   checkout:
     'https://discord.com/api/webhooks/1509394840100540537/LttKVCLkll2ni1xyC5NNtuXQVrz_wpi7WTGUEhUgDgOHBTsBqSA-2TtnsVdpgZJ6Z-vJ',
 
-  pagos:
+  pago:
     'https://discord.com/api/webhooks/1509394950729760828/Ii0solHUKx97IT_8l5kyLeVA2TJCMD4K-JObcKbAnixTCku0ER7_v4TRPoRw3Ml4-KFk',
 
-  purchases:
+  purchase:
     'https://discord.com/api/webhooks/1509395052865130536/8wJXEeVSCa_1HT5jTs64-UciN7rK9IhXz7C9R2e0m7CiPlDXdO-oABnguGMJS6YDgTey',
 
-  errores:
+  errore:
     'https://discord.com/api/webhooks/1509395176186052752/Bn-kmnL244-5qvi3n5Ms2vgFv5hDF9P99FcVeH72T8QgXK4ywxiToEtxy7zZL07XmuUV',
 }
 
@@ -131,13 +131,13 @@ export async function POST(req: NextRequest) {
       },
     }
 
-    let webhook = WEBHOOKS.visitas
+    let webhook = WEBHOOKS.visita
 
     if (type === 'preview') webhook = WEBHOOKS.preview
     if (type === 'checkout') webhook = WEBHOOKS.checkout
-    if (type === 'pago') webhook = WEBHOOKS.pagos
-    if (type === 'purchase') webhook = WEBHOOKS.purchases
-    if (type === 'error') webhook = WEBHOOKS.errores
+    if (type === 'pago') webhook = WEBHOOKS.pago
+    if (type === 'purchase') webhook = WEBHOOKS.purchase
+    if (type === 'error') webhook = WEBHOOKS.errore
 
     await fetch(webhook, {
       method: 'POST',
