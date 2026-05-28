@@ -350,7 +350,7 @@ const previewChannels = [
             </div>
 
             {/* TITLE */}
-            <h1 className="text-5xl md:text-7xl font-black leading-[0.92] tracking-tight">
+            <h1 className="text-3xl leading-tight md:text-6xl font-black tracking-tight">
               El servidor
               <span className="bg-gradient-to-r from-fuchsia-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">
                 {" "}
@@ -366,7 +366,7 @@ const previewChannels = [
             </p>
 
             {/* SOCIAL STATS */}
-            <div className="mt-10 grid grid-cols-3 gap-4">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-6">
                 <div className="text-4xl font-black">18K+</div>
                 <div className="text-sm text-zinc-500 mt-2">Miembros</div>
@@ -387,7 +387,7 @@ const previewChannels = [
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a
                 href="#checkout"
-                className="group relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-10 py-6 text-xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.02] transition-all duration-300 text-center"
+                className="group relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-6 py-4 text-base md:px-10 md:py-6 md:text-xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.02] transition-all duration-300 text-center"
               >
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -895,7 +895,7 @@ const previewChannels = [
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 <span className="relative z-10 flex items-center justify-center">
-                  Desbloquear acceso VIP ahora
+                  Entra al discord
                   <span className="ml-3 group-hover:translate-x-1 transition-transform">
                     →
                   </span>
@@ -1122,7 +1122,7 @@ const previewChannels = [
             <button
               onClick={handleAccess}
               disabled={loading}
-              className="group relative overflow-hidden mt-8 w-full rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-10 py-6 text-xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.01] transition-all duration-300 disabled:opacity-70"
+              className="group relative overflow-hidden mt-8 w-full rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-6 py-4 text-base md:px-10 md:py-6 md:text-xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.01] transition-all duration-300 disabled:opacity-70"
             >
               <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
