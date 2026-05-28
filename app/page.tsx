@@ -2,6 +2,8 @@
 import Script from 'next/script'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Image from "next/image";
+import lockIcon from "@/public/lock.png";
 declare global {
   interface Window {
     fbq: any
@@ -941,8 +943,8 @@ const previewChannels = [
 
                       <div className="absolute inset-0 backdrop-blur-[18px] flex flex-col items-center justify-center">
 
-                        <div className="text-6xl mb-5 group-hover:scale-110 transition-transform">
-                          🔒
+                        <div className="mb-5 group-hover:scale-110 transition-transform">
+                          <Image src={lockIcon} alt="lock" width={64} height={64} />
                         </div>
 
                         <div className="text-2xl font-black">
