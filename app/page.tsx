@@ -856,16 +856,58 @@ const previewChannels = [
           {previewLocked ? (
             <div className="h-full flex flex-col items-center justify-center text-center px-10">
 
-              <div className="w-32 h-32 rounded-[2rem] bg-gradient-to-br from-fuchsia-500/20 to-violet-600/20 border border-fuchsia-500/20 flex items-center justify-center text-6xl shadow-[0_0_60px_rgba(217,70,239,0.15)]">
+              <div className="w-36 h-36 rounded-[2.5rem] bg-gradient-to-br from-fuchsia-500/20 to-violet-600/20 border border-fuchsia-500/20 flex items-center justify-center text-6xl shadow-[0_0_80px_rgba(217,70,239,0.18)]">
                 🔒
               </div>
 
-              <h2 className="mt-10 text-5xl font-black">
-                Elegí un canal
+              <h2 className="mt-10 text-5xl font-black leading-[0.95]">
+                Esto no es contenido común.
+                <br />
+                Es acceso restringido.
               </h2>
 
-              <p className="mt-5 text-zinc-400 text-xl max-w-xl leading-relaxed">
-                Explorá previews reales del servidor privado y desbloqueá acceso completo al contenido VIP.
+              <p className="mt-6 text-zinc-300 text-xl max-w-2xl leading-relaxed">
+                Estás viendo solo una muestra. Adentro hay canales privados activos 24/7 con contenido exclusivo, filtraciones y material que no se publica en ningún otro lado.
+              </p>
+
+              <div className="mt-8 flex flex-col items-center gap-3 text-sm text-zinc-400">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  237 personas activas ahora mismo
+                </div>
+
+                <div className="flex items-center gap-2">
+                  🔥 acceso limitado — plazas casi agotadas
+                </div>
+              </div>
+
+              <button
+                onClick={() => {
+                  setPreviewOpen(false)
+
+                  if (window.fbq) {
+                    window.fbq('track', 'InitiateCheckout', {
+                      value: 3700,
+                      currency: 'ARS',
+                    })
+                  }
+
+                  setOpen(true)
+                }}
+                className="mt-10 group relative overflow-hidden rounded-[2.2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-14 py-6 text-2xl font-black shadow-[0_0_90px_rgba(217,70,239,0.4)] hover:scale-[1.03] transition-all duration-300"
+              >
+                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                <span className="relative z-10 flex items-center justify-center">
+                  Desbloquear acceso VIP ahora
+                  <span className="ml-3 group-hover:translate-x-1 transition-transform">
+                    →
+                  </span>
+                </span>
+              </button>
+
+              <p className="mt-5 text-xs text-zinc-500 max-w-md">
+                Acceso inmediato luego del pago. Cancelable en cualquier momento.
               </p>
 
             </div>
