@@ -269,10 +269,7 @@ const previewChannels = [
 ]
   return (
     <>
-  <Script
-  src="https://connect.facebook.net/en_US/fbevents.js"
-  strategy="afterInteractive"
-  />
+      
   <Script
   id="meta-pixel"
   strategy="afterInteractive"
