@@ -93,7 +93,11 @@ useEffect(() => {
       try {
   
         // 👇 AGREGAR ESTO
-
+        if (email) {
+          window.fbq('init', '1383716853246156', {
+            em: email,
+          })
+        }
   
         // 👇 PURCHASE
         window.fbq(
@@ -291,7 +295,10 @@ const previewChannels = [
       (window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
 
-      fbq('init', '1383716853246156');
+      fbq('init', '1383716853246156', {
+        em: '',
+      });
+      
       fbq('track', 'PageView');
     `,
   }}
