@@ -264,7 +264,6 @@ const previewChannels = [
   '# mel-rojas',
   '# anto-cabrera',
   '# luli-bustos',
-  '# sofia-godoy',
 ]
   return (
     <>
