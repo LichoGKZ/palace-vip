@@ -86,20 +86,17 @@ useEffect(() => {
   
     await new Promise((resolve) => setTimeout(resolve, 5000))
   
-    const eventId = crypto.randomUUID()
+    const eventId =
+      typeof crypto !== 'undefined' && crypto.randomUUID
+        ? crypto.randomUUID()
+        : Date.now().toString()
   
     if (typeof window !== 'undefined' && window.fbq) {
   
       try {
-  
-        // 👇 AGREGAR ESTO
-        if (email) {
-          window.fbq('init', '1383716853246156', {
-            em: email,
-          })
-        }
-  
-        // 👇 PURCHASE
+
+        console.log('[META] fbq existe?', !!window.fbq)
+        console.log('[META] enviando Purchase...')
         window.fbq(
           'track',
           'Purchase',
@@ -295,10 +292,7 @@ const previewChannels = [
       (window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
 
-      fbq('init', '1383716853246156', {
-        em: '',
-      });
-      
+      fbq('init', '1383716853246156');
       fbq('track', 'PageView');
     `,
   }}
