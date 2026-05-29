@@ -70,41 +70,58 @@ useEffect(() => {
   }
   
 }, [])
-
 useEffect(() => {
-  sendLog('visita')
+  if (typeof window !== 'undefined') {
 
-  const handleError = (event: ErrorEvent) => {
-    sendLog('error', {
-      message: event.message,
-      source: event.filename,
-    })
-  }
+    window.fbq = window.fbq || function (...args: any[]) {
+      window.fbq.callMethod
+        ? window.fbq.callMethod(...args)
+        : window.fbq.queue.push(args)
+    }
 
-  window.addEventListener('error', handleError)
+    if (!window.fbq.loaded) {
+      window.fbq.loaded = true
+      window.fbq.version = '2.0'
+      window.fbq.queue = []
 
-  return () => {
-    window.removeEventListener('error', handleError)
+      window.fbq('init', '1383716853246156')
+
+      window.fbq('track', 'PageView')
+
+      window.fbq('track', 'ViewContent', {
+        content_name: 'PALACE VIP',
+        content_category: 'membership',
+      })
+    }
   }
 }, [])
 
 
   const handleAccess = async () => {
+  
     if (window.fbq) {
       window.fbq('track', 'AddPaymentInfo', {
         value: 4600,
         currency: 'ARS',
       })
     }
-
+  
     setLoading(true)
-
+  
     await new Promise((resolve) => setTimeout(resolve, 5000))
-
+  
     const eventId = crypto.randomUUID()
-
+  
     if (typeof window !== 'undefined' && window.fbq) {
+  
       try {
+  
+        // 👇 AGREGAR ESTO
+        window.fbq('init', '1383716853246156', {
+          em: email,
+        })
+  
+        // 👇 PURCHASE
         window.fbq(
           'track',
           'Purchase',
@@ -118,23 +135,25 @@ useEffect(() => {
             eventID: eventId,
           }
         )
-    
+  
         console.log('[META] Purchase enviado', eventId)
+  
       } catch (err) {
         console.error('[META] Error enviando Purchase', err)
       }
     }
-  sendLog('pago', {
-    email,
-  })
-
-  sendLog('purchase', {
-    email,
-    eventId,
-  })
-
-  setLoading(false)
-  setApproved(true)
+  
+    sendLog('pago', {
+      email,
+    })
+  
+    sendLog('purchase', {
+      email,
+      eventId,
+    })
+  
+    setLoading(false)
+    setApproved(true)
   }
   const fakeActivity = [
     "mati.vip desbloqueó acceso hace 2 min",
@@ -277,36 +296,9 @@ const previewChannels = [
   return (
     <>
   <Script
-    id="meta-pixel"
-    strategy="afterInteractive"
-  >
-    {`
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;
-      n.push=n;
-      n.loaded=!0;
-      n.version='2.0';
-      n.queue=[];
-      t=b.createElement(e);
-      t.async=!0;
-      t.src=v;
-      s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}
-      (window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-
-      fbq('init', '1383716853246156');
-
-      fbq('track', 'PageView');
-
-      fbq('track', 'ViewContent', {
-        content_name: 'PALACE VIP',
-        content_category: 'membership'
-      });
-    `}
-  </Script>
+  src="https://connect.facebook.net/en_US/fbevents.js"
+  strategy="afterInteractive"
+  />
     <div className="min-h-screen bg-black text-white overflow-hidden relative">
       {/* BACKGROUND */}
       <div className="fixed inset-0 bg-black" />
@@ -730,15 +722,21 @@ const previewChannels = [
             <div className="mt-12">
               <button
                 onClick={() => {
-                if (window.fbq) {
-                  window.fbq('track', 'InitiateCheckout', {
-                    value: 4600,
-                    currency: 'ARS',
-                  })
-                }
-                sendLog('checkout')
-                setOpen(true)
-              }}
+                  if (window.fbq) {
+                
+                    window.fbq('init', '1383716853246156', {
+                      em: email,
+                    })
+                
+                    window.fbq('track', 'InitiateCheckout', {
+                      value: 4600,
+                      currency: 'ARS',
+                    })
+                  }
+                
+                  sendLog('checkout')
+                  setOpen(true)
+                }}
                 className="group relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-14 py-7 text-2xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.02] transition-all duration-300"
               >
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
