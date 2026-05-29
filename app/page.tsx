@@ -672,12 +672,12 @@ const previewChannels = [
             {/* PRICE */}
             <div className="mt-12">
               <div className="text-zinc-500 line-through text-2xl">
-                $9.900 ARS
+                $19.900 ARS
               </div>
 
               <div className="flex items-end justify-center gap-3 mt-1">
                 <div className="text-7xl md:text-8xl font-black tracking-tight">
-                  $3.700
+                  $4.800
                 </div>
 
                 <div className="text-zinc-500 pb-4">ARS</div>
@@ -1114,7 +1114,7 @@ const previewChannels = [
                   </div>
 
                   <div className="text-5xl font-black mt-2">
-                    $3.700
+                    $4.800
                   </div>
 
                   <div className="text-fuchsia-300 text-sm mt-1">
