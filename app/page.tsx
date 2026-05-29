@@ -129,7 +129,7 @@ useEffect(() => {
     setApproved(true)
   }
   const fakeActivity = [
-    "mati.vip desbloqueó acceso hace 2 min",
+    "matii_kpo desbloqueó acceso hace 2 min",
     "nuevo contenido agregado hace 6 min",
     "27 personas entraron hoy",
     "237 miembros online ahora",
