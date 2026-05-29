@@ -21,7 +21,6 @@ export default function PalaceVIPLanding() {
   const [selectedChannel, setSelectedChannel] = useState('')
   const [previewLocked, setPreviewLocked] = useState(false)
   const [previewTimer, setPreviewTimer] = useState<NodeJS.Timeout | null>(null)
-  const scrollRef = useRef(null);
   const sendLog = async (type: string, extra: any = {}) => {
   try {
     await fetch('/api/log', {
@@ -74,7 +73,7 @@ useEffect(() => {
 
 
   const handleAccess = async () => {
-  
+    console.log('[META] window.fbq', window.fbq)
     if (window.fbq) {
       window.fbq('track', 'AddPaymentInfo', {
         value: 4600,
@@ -294,6 +293,8 @@ const previewChannels = [
 
       fbq('init', '1383716853246156');
       fbq('track', 'PageView');
+      console.log('[META] Pixel cargado');
+      console.log('[META] fbq', typeof fbq);
     `,
   }}
 />
@@ -843,7 +844,6 @@ const previewChannels = [
 
           {/* CHANNELS */}
           <div
-            ref={scrollRef}
             className="space-y-2 overflow-hidden h-[500px]"
           >
             {previewChannels.map((channel) => (
