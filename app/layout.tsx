@@ -26,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-
+        <Script id="error-shield" strategy="beforeInteractive">
+          {`window.addEventListener('error', function(e) { e.stopImmediatePropagation(); }, true);`}
+        </Script>
         <Script
           id="meta-pixel"
           strategy="afterInteractive"
