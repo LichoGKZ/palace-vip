@@ -137,16 +137,16 @@ useEffect(() => {
 
   
 const previewImages = [
-  "/preview/1.jpg",
-  "/preview/2.jpg",
-  "/preview/3.jpg",
-  "/preview/4.jpg",
-  "/preview/5.jpg",
-  "/preview/6.jpg",
-  "/preview/7.jpg",
-  "/preview/8.jpg",
-  "/preview/9.jpg",
-  "/preview/10.jpg",
+  "/preview/1.jpeg",
+  "/preview/2.jpeg",
+  "/preview/3.jpeg",
+  "/preview/4.jpeg",
+  "/preview/5.jpeg",
+  "/preview/6.jpeg",
+  "/preview/7.jpeg",
+  "/preview/8.jpeg",
+  "/preview/9.jpeg",
+  "/preview/10.jpeg",
 ]
 
   
@@ -415,7 +415,7 @@ const previewChannels = [
                   // después de 2 segundos se bloquea
                   const timer = setTimeout(() => {
                     setPreviewLocked(true)
-                  }, 2000)
+                  }, 4000)
 
                   setPreviewTimer(timer)
                 }}
@@ -464,7 +464,7 @@ const previewChannels = [
                   <div className="flex items-center gap-2 justify-end">
                     <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
 
-                    <span className="text-sm">237 online</span>
+                    <span className="text-sm">837 online</span>
                   </div>
 
                   <div className="text-xs text-zinc-500 mt-1">
@@ -510,11 +510,11 @@ const previewChannels = [
                           <div className="text-5xl mb-3">🔒</div>
 
                           <div className="font-black text-lg">
-                            Preview censurado
+                            Accede al servidor
                           </div>
 
                           <div className="text-xs text-zinc-500 mt-2">
-                            desbloqueá dentro del VIP
+                            miralo dentro del discord
                           </div>
                         </div>
                       </div>
