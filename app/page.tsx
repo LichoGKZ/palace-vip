@@ -136,6 +136,20 @@ useEffect(() => {
   ]
 
   
+const previewImages = [
+  "/preview/1.jpg",
+  "/preview/2.jpg",
+  "/preview/3.jpg",
+  "/preview/4.jpg",
+  "/preview/5.jpg",
+  "/preview/6.jpg",
+  "/preview/7.jpg",
+  "/preview/8.jpg",
+  "/preview/9.jpg",
+  "/preview/10.jpg",
+]
+
+  
   const testimonials = [
     
     {
@@ -925,36 +939,46 @@ const previewChannels = [
               {/* MAIN */}
               <div className="flex-1 p-8 overflow-y-auto">
 
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
-                  {[1,2,3].map((i) => (
-                    <div
-                      key={i}
-                      className="group relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 bg-gradient-to-br from-zinc-900 to-black hover:scale-[1.02] transition-all duration-500"
-                    >
+                {previewImages.map((img, i) => (
+                  <div
+                    key={i}
+                    className="group relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10"
+                  >
 
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.25),transparent_45%)]" />
+                    <Image
+                      src={img}
+                      alt={`Preview ${i}`}
+                      fill
+                      className="object-cover"
+                    />
 
-                      <div className="absolute inset-0 backdrop-blur-[18px] flex flex-col items-center justify-center">
+                    <div className="absolute inset-0 backdrop-blur-[14px] bg-black/20 flex flex-col items-center justify-center">
 
-                        <div className="mb-5 group-hover:scale-110 transition-transform">
-                          <Image src={lockIcon} alt="lock" width={64} height={64} />
-                        </div>
+                      <div className="mb-4">
+                        <Image
+                          src={lockIcon}
+                          alt="lock"
+                          width={56}
+                          height={56}
+                        />
+                      </div>
 
-                        <div className="text-2xl font-black">
-                          Contenido VIP
-                        </div>
+                      <div className="font-black text-xl">
+                        Contenido VIP
+                      </div>
 
-                        <div className="mt-3 text-sm text-zinc-500">
-                          desbloqueá el acceso completo
-                        </div>
-
+                      <div className="text-sm text-zinc-300 mt-2">
+                        desbloqueá acceso completo
                       </div>
 
                     </div>
-                  ))}
 
-                </div>
+                  </div>
+                ))}
+
+              </div>
 
                 {/* CTA */}
                 <div className="mt-12 rounded-[2.5rem] border border-fuchsia-500/20 bg-gradient-to-b from-fuchsia-500/10 to-black p-10 text-center shadow-[0_0_80px_rgba(217,70,239,0.12)]">
