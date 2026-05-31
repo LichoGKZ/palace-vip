@@ -11,7 +11,7 @@ declare global {
     fbq: any
   }
 }
-export default function PalaceLanding() {
+export default function PalaceVIPLanding() {
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [approved, setApproved] = useState(false)
@@ -101,7 +101,7 @@ useEffect(() => {
           {
             value: 4600,
             currency: 'ARS',
-            content_name: 'PALACE ',
+            content_name: 'PALACE VIP',
             content_type: 'product',
           },
           {
@@ -129,8 +129,8 @@ useEffect(() => {
     setApproved(true)
   }
   const fakeActivity = [
-    "matii_kpo desbloqueó acceso hace 2 min",
-    "nuevo  agregado hace 6 min",
+    "mati.vip desbloqueó acceso hace 2 min",
+    "nuevo contenido agregado hace 6 min",
     "27 personas entraron hoy",
     "237 miembros online ahora",
   ]
@@ -144,23 +144,126 @@ useEffect(() => {
       color: "from-fuchsia-500 to-pink-500",
     },
     {
-      user: "mati.",
+      user: "mati.vip",
       text: "actualizan más rápido que telegram",
       color: "from-violet-500 to-fuchsia-500",
     },
     {
       user: "franco.jpg",
-      text: "entrás y tenés  infinito",
+      text: "entrás y tenés contenido infinito",
       color: "from-pink-500 to-violet-500",
     },
     {
       user: "naza.raw",
-      text: "el canal de  es una locura",
+      text: "el canal de filtraciones es una locura",
       color: "from-fuchsia-400 to-violet-600",
     },
   ]
 const previewChannels = [
-  '# futbol',
+  '# albere',
+  '# alaska',
+  '# mika-rios',
+  '# milica',
+  '# martu-boden',
+  '# tuli-acosta',
+  '# kiara-tuliano',
+  '# agus_anon',
+  '# billie_eilish',
+  '# lali',
+  '# martu_boden',
+  '# milica',
+  '# niki_nicole',
+  '# sofi_maure',
+  '# sofi_oc',
+  '# tuli_acosta',
+  '# wanda_nara',
+  '# sol-perez',
+  '# agus-rozas',
+  '# agus-tana',
+  '# aldana-belen',
+  '# angie-corine',
+  '# angie-watters',
+  '# arigameplays',
+  '# barby-silenzi',
+  '# cazzu',
+  '# ccamve',
+  '# clara-kush',
+  '# coty-romero',
+  '# daiana-hernandez',
+  '# dulcinea',
+  '# eloisa-hermana-de-oki',
+  '# ester-exposito',
+  '# floppy-tesouro',
+  '# juli-castro',
+  '# kiara-tuliano',
+  '# la-joaqui',
+  '# lua-sansat',
+  '# mika-lafuente',
+  '# mika-rios',
+  '# pao-maldonado',
+  '# pri-mora',
+  '# rorodrigu',
+  '# saramalacara',
+  '# sasha-ferro',
+  '# seleneltor',
+  '# zaira-nara',
+  '# cande-negri',
+  '# china-suarez',
+  '# jimena-baron',
+  '# lia-sikora',
+  '# taurozzi',
+  '# bardxra69',
+  '# agus-loureiro',
+  '# candela-diaz',
+  '# belen-negri',
+  '# biei-postiglone',
+  '# emilia-mernes',
+  '# cande-tinelli',
+  '# bri-marcos',
+  '# mica-de-boe',
+  '# fati-vazquez',
+  '# luna-dss',
+  '# magali-narvjas',
+  '# maria-becerra',
+  '# mica-suarez',
+  '# moondays',
+  '# morena-beltran',
+  '# luna-castro',
+  '# marti-gimenez',
+  '# rocio-peralta',
+  '# more-garcia',
+  '# cami-lopez',
+  '# cata-diaz',
+  '# naiara-acosta',
+  '# juana-gaitan',
+  '# juli-fernandez',
+  '# candela-sosa',
+  '# lupe-herrera',
+  '# vicky-torres',
+  '# tati-morales',
+  '# prisa-gomez',
+  '# emi-navarro',
+  '# rochi-medina',
+  '# malena-ortiz',
+  '# delfi-rodriguez',
+  '# clara-silva',
+  '# micaela-ramos',
+  '# sabri-ibarra',
+  '# nati-paz',
+  '# magui-romero',
+  '# dani-ledesma',
+  '# cele-figueroa',
+  '# agos-nunez',
+  '# ailu-correa',
+  '# barbi-quiroga',
+  '# zoe-farina',
+  '# guada-luna',
+  '# belu-prieto',
+  '# jaz-santana',
+  '# camila-alvarez',
+  '# mel-rojas',
+  '# anto-cabrera',
+  '# luli-bustos',
 ]
   return (
     <>
@@ -233,7 +336,7 @@ const previewChannels = [
             {/* BADGE */}
             <div className="inline-flex items-center gap-3 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/10 backdrop-blur-xl px-5 py-3 text-sm text-fuchsia-200 mb-8 shadow-lg shadow-fuchsia-500/10">
               <div className="w-2 h-2 rounded-full bg-fuchsia-400 animate-pulse" />
-              Todas las  de Argentina
+              Todas las famosas de Argentina
             </div>
 
             {/* TITLE */}
@@ -241,14 +344,14 @@ const previewChannels = [
               El servidor de
               <span className="bg-gradient-to-r from-fuchsia-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">
                 {" "}
-                {" "}
+                Discord{" "}
               </span>
-              con mas  de Argentina.
+              con mas contenido de Argentina.
             </h1>
 
             {/* SUBTEXT */}
             <p className="mt-8 text-zinc-300 text-xl leading-relaxed max-w-xl">
-              Accedé a  exclusivas,  premium,
+              Accedé a filtraciones exclusivas, contenido premium,
               actualizaciones diarias y una comunidad activa 24/7.
             </p>
 
@@ -261,7 +364,7 @@ const previewChannels = [
 
               <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-6">
                 <div className="text-4xl font-black">80GB+</div>
-                <div className="text-sm text-zinc-500 mt-2"></div>
+                <div className="text-sm text-zinc-500 mt-2">Contenido</div>
               </div>
 
               <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-6">
@@ -328,7 +431,7 @@ const previewChannels = [
             <div className="absolute inset-0 bg-fuchsia-500/20 blur-[120px] rounded-full" />
 
             <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-[#0a0a0a]/90 backdrop-blur-2xl shadow-[0_0_80px_rgba(217,70,239,0.15)]">
-              {/*  TOP */}
+              {/* DISCORD TOP */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-black/40">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-violet-700 flex items-center justify-center font-black">
@@ -336,7 +439,7 @@ const previewChannels = [
                   </div>
 
                   <div>
-                    <div className="font-bold text-lg">PALACE </div>
+                    <div className="font-bold text-lg">PALACE VIP</div>
                     <div className="text-xs text-zinc-500">
                       servidor privado • acceso premium
                     </div>
@@ -397,7 +500,7 @@ const previewChannels = [
                           </div>
 
                           <div className="text-xs text-zinc-500 mt-2">
-                            desbloqueá dentro del 
+                            desbloqueá dentro del VIP
                           </div>
                         </div>
                       </div>
@@ -470,17 +573,17 @@ const previewChannels = [
               {
                 icon: "⚡",
                 title: "Actualizaciones constantes",
-                text: " nuevo agregado todos los días. Nada abandonado o reciclado.",
+                text: "Contenido nuevo agregado todos los días. Nada abandonado o reciclado.",
               },
               {
                 icon: "🚀",
                 title: "Acceso inmediato",
-                text: "Comprás una vez y entrás automáticamente al servidor .",
+                text: "Comprás una vez y entrás automáticamente al servidor VIP.",
               },
               {
                 icon: "👑",
                 title: "Comunidad real",
-                text: "Miles de miembros activos compartiendo  diariamente.",
+                text: "Miles de miembros activos compartiendo contenido diariamente.",
               },
             ].map((item) => (
               <div
@@ -519,12 +622,12 @@ const previewChannels = [
 
             {/* TITLE */}
             <h2 className="mt-8 text-5xl md:text-7xl font-black leading-[0.95]">
-              Acceso  completo
+              Acceso VIP completo
             </h2>
 
             <p className="mt-6 text-zinc-300 text-xl max-w-2xl mx-auto leading-relaxed">
               Entrá ahora al servidor privado y desbloqueá acceso inmediato a
-              todo el  premium.
+              todo el contenido premium.
             </p>
 
             {/* PRICE */}
@@ -549,9 +652,9 @@ const previewChannels = [
             {/* FEATURES */}
             <div className="mt-12 grid md:grid-cols-2 gap-4 text-left max-w-3xl mx-auto">
               {[
-                "Acceso inmediato al  ",
+                "Acceso inmediato al Discord VIP",
                 "Canales premium exclusivos",
-                " actualizado diariamente",
+                "Contenido actualizado diariamente",
                 "Comunidad privada activa",
                 "Compatible celular y PC",
                 "Ingreso automático después del pago",
@@ -625,7 +728,7 @@ const previewChannels = [
       {/* FOOTER */}
       <footer className="relative z-10 border-t border-white/10 py-12 text-center">
         <div className="text-zinc-500 text-sm">
-          PALACE  • comunidad privada exclusiva • acceso limitado
+          PALACE VIP • comunidad privada exclusiva • acceso limitado
         </div>
 
         <div className="mt-4 flex justify-center gap-6 text-sm">
@@ -695,7 +798,7 @@ const previewChannels = [
 
             <div>
               <div className="font-black text-lg">
-                PALACE 
+                PALACE VIP
               </div>
 
               <div className="text-xs text-zinc-500">
@@ -750,19 +853,19 @@ const previewChannels = [
             <div className="h-full flex flex-col items-center justify-center text-center px-10">
 
               <h2 className="mt-6 md:mt-10 text-2xl md:text-5xl font-black leading-[1.05] px-2">
-                Este no es un  mas...
+                Este no es un discord mas...
                 <br />
                 Esto es mejor que OnlyFans.
               </h2>
 
               <p className="mt-4 md:mt-6 text-sm md:text-xl text-zinc-300 max-w-2xl leading-relaxed px-2">
-                Mas de 200  argentinas, mas de 17mil archivos. Todo en un solo lugar.
+                Mas de 200 artistas argentinas, mas de 17mil archivos. Todo en un solo lugar.
               </p>
 
               <div className="mt-8 flex flex-col items-center gap-3 text-sm text-zinc-400">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  18mil Usuarios en 
+                  18mil Usuarios en discord
                 </div>
               </div>
 
@@ -808,7 +911,7 @@ const previewChannels = [
                   </div>
 
                   <div className="text-sm text-zinc-500 mt-1">
-                     premium privado
+                    contenido premium privado
                   </div>
                 </div>
 
@@ -839,7 +942,7 @@ const previewChannels = [
                         </div>
 
                         <div className="text-2xl font-black">
-                           
+                          Contenido VIP
                         </div>
 
                         <div className="mt-3 text-sm text-zinc-500">
@@ -861,13 +964,13 @@ const previewChannels = [
                   </div>
 
                   <h3 className="mt-7 text-5xl font-black leading-[0.95]">
-                    Para ver el  completo
+                    Para ver el contenido completo
                     <br />
-                    necesitás acceso .
+                    necesitás acceso VIP.
                   </h3>
 
                   <p className="mt-5 text-zinc-400 text-lg max-w-2xl mx-auto">
-                    Entrá ahora al servidor privado y desbloqueá todos los canales premium,  y  exclusivo.
+                    Entrá ahora al servidor privado y desbloqueá todos los canales premium, filtraciones y contenido exclusivo.
                   </p>
 
                   <button
@@ -936,7 +1039,7 @@ const previewChannels = [
           </div>
 
           <h2 className="mt-6 text-4xl md:text-5xl font-black leading-[0.95]">
-            Solicitud de acceso 
+            Solicitud de acceso VIP
           </h2>
 
           <p className="mt-4 text-zinc-400 text-lg leading-relaxed">
@@ -971,7 +1074,7 @@ const previewChannels = [
               <div className="flex items-center justify-between gap-4 flex-wrap">
                 <div>
                   <div className="text-sm text-zinc-500">
-                    Acceso  completo
+                    Acceso VIP completo
                   </div>
 
                   <div className="text-5xl font-black mt-2">
@@ -1078,11 +1181,11 @@ const previewChannels = [
 
               <div className="mt-4">
                 <a
-                  href="https://.gg/SGWcJ4HPY"
+                  href="https://discord.gg/SGWcJ4HPY"
                   target="_blank"
                   className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-green-400 to-emerald-500 px-8 py-5 text-lg font-black text-black hover:scale-[1.02] transition-all"
                 >
-                  Entrar al servidor  →
+                  Entrar al servidor VIP →
                 </a>
               </div>
 
