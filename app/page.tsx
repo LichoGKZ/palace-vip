@@ -419,8 +419,7 @@ const previewChannels = [
 
                   setPreviewTimer(timer)
                 }}
-                className="group relative overflow-hidden rounded-[2rem] border border-fuchsia-500/20 bg-white/[0.04] backdrop-blur-xl px-10 py-6 text-lg font-semibold hover:bg-white/[0.08] transition-all"
-              >
+                className="group relative overflow-hidden rounded-[2rem] border border-fuchsia-500/20 bg-white/[0.04] backdrop-blur-0 px-10 py-6 text-lg font-semibold hover:bg-white/[0.08] transition-all"              >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.25),transparent_60%)]" />
 
                 <span className="relative z-10 flex items-center justify-center gap-3">
