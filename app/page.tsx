@@ -953,7 +953,7 @@ const previewChannels = [
                       className="object-cover"
                     />
 
-                    <div className="absolute inset-0 backdrop-blur-[14px] bg-black/20 flex flex-col items-center justify-center">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
 
                       <div className="font-black text-xl">
                         Contenido VIP
