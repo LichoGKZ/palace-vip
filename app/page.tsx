@@ -505,7 +505,7 @@ const previewChannels = [
                       >
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.35),transparent_45%)]" />
 
-                        <div className="absolute inset-0 backdrop-blur-[14px] flex flex-col items-center justify-center">
+                        <div className="absolute inset-0 backdrop-blur-0 flex flex-col items-center justify-center">
                           <div className="text-5xl mb-3">🔒</div>
 
                           <div className="font-black text-lg">
