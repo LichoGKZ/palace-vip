@@ -956,15 +956,6 @@ const previewChannels = [
 
                     <div className="absolute inset-0 backdrop-blur-[14px] bg-black/20 flex flex-col items-center justify-center">
 
-                      <div className="mb-4">
-                        <Image
-                          src={lockIcon}
-                          alt="lock"
-                          width={56}
-                          height={56}
-                        />
-                      </div>
-
                       <div className="font-black text-xl">
                         Contenido VIP
                       </div>
