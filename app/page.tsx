@@ -1113,7 +1113,7 @@ const previewChannels = [
                 </div>
 
                 <div className="mt-2 text-2xl font-black tracking-wide">
-                  licho380.santander
+                  licho380.macro
                 </div>
 
               </div>
