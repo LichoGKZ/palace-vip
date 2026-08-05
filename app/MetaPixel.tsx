@@ -3,7 +3,7 @@
 
 import { useEffect } from 'react'
 
-const PIXEL_ID = '2140688816493036'
+const PIXEL_ID = '1758290612089722'
 
 function getOrCreateExternalId(): string {
   try {
