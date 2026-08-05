@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Palace",
   description: "Mas que contenido",
+  other: {
+    'facebook-domain-verification': 'ie4mj0zf35uo1zv8siv5bq7xwe4uxn',
+  },
 };
 
 export default function RootLayout({
