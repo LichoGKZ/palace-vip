@@ -14,7 +14,10 @@ export default function MetaPixel() {
       s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}
       (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1383716853246156');
+      fbq('init','PIXEL_ID',{
+          em: emailHash,
+          external_id: userId
+      });
       fbq('track', 'PageView');
     `
     document.head.appendChild(script)
