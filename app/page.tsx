@@ -77,6 +77,10 @@ useEffect(() => {
       window.fbq('track', 'AddPaymentInfo', {
         value: 4600,
         currency: 'ARS',
+        content_name: 'PALACE VIP',
+        content_type: 'product',
+        content_ids: ['palace-vip'],
+        num_items: 1
       })
     }
   
@@ -101,11 +105,22 @@ useEffect(() => {
           {
             value: 4600,
             currency: 'ARS',
+        
             content_name: 'PALACE VIP',
             content_type: 'product',
+        
+            content_ids: ['palace-vip'],
+            contents: [
+              {
+                id: 'palace-vip',
+                quantity: 1
+              }
+            ],
+        
+            num_items: 1
           },
           {
-            eventID: eventId,
+            eventID: eventId
           }
         )
   
@@ -125,6 +140,10 @@ useEffect(() => {
       eventId,
     })
   
+    if (window.fbq) {
+      window.fbq('track', 'CompleteRegistration')
+    }
+    
     setLoading(false)
     setApproved(true)
   }
@@ -408,6 +427,13 @@ const previewChannels = [
                   sendLog('preview')
 
                   setPreviewOpen(true)
+                  if (window.fbq) {
+                    window.fbq('track', 'ViewContent', {
+                      content_name: 'PALACE VIP',
+                      content_type: 'product',
+                      content_ids: ['palace-vip']
+                    })
+                  }
                   setPreviewLocked(false)
 
                   sendLog('preview_open')
@@ -711,6 +737,10 @@ const previewChannels = [
                     window.fbq('track', 'InitiateCheckout', {
                       value: 4600,
                       currency: 'ARS',
+                      content_name: 'PALACE VIP',
+                      content_type: 'product',
+                      content_ids: ['palace-vip'],
+                      num_items: 1
                     })
                   }
                 
@@ -1075,7 +1105,19 @@ const previewChannels = [
                   type="email"
                   placeholder="tuemail@gmail.com"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value)
+                
+                    if (
+                      window.fbq &&
+                      e.target.value.includes("@") &&
+                      e.target.value.length > 5
+                    ) {
+                      window.fbq('track', 'Lead', {
+                        content_name: 'PALACE VIP'
+                      })
+                    }
+                  }}
                   className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 outline-none focus:border-fuchsia-500/40 transition-all"
                 />
               </div>
