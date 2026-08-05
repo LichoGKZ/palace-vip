@@ -2,6 +2,7 @@
 'use client'
 import { useEffect } from 'react'
 
+<<<<<<< HEAD
 
 
 
@@ -28,6 +29,10 @@ export default function MetaPixel() {
 
     const externalId = getOrCreateExternalId()
 
+=======
+export default function MetaPixel() {
+  useEffect(() => {
+>>>>>>> 9c6c5b50da503261352c11dedc74fca17e90cb52
     const script = document.createElement('script')
     script.innerHTML = `
       !function(f,b,e,v,n,t,s)
@@ -38,6 +43,7 @@ export default function MetaPixel() {
       s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}
       (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+<<<<<<< HEAD
 
       fbq('init', '${PIXEL_ID}', { external_id: '${externalId}' });
       fbq('track', 'PageView');
@@ -62,4 +68,19 @@ export default function MetaPixel() {
       />
     </noscript>
   )
+=======
+      fbq('init', '1383716853246156', {
+        external_id: localStorage.getItem('palace_uid') || (() => {
+          const id = crypto.randomUUID();
+          localStorage.setItem('palace_uid', id);
+          return id;
+        })()
+      });
+      
+      fbq('track', 'PageView');
+    `
+    document.head.appendChild(script)
+  }, [])
+  return null
+>>>>>>> 9c6c5b50da503261352c11dedc74fca17e90cb52
 }
