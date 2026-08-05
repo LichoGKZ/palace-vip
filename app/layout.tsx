@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import Script from "next/script";
+import "./globals.css";
+import MetaPixel from "./MetaPixel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,11 +25,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html
+      lang="es"
+      className={`${geistSans.variable} ${geistMono.variable}`}
+    >
       <body>
         <Script id="error-shield" strategy="beforeInteractive">
-          {`window.addEventListener('error', function(e) { e.stopImmediatePropagation(); }, true);`}
+          {`
+            window.addEventListener('error', function(e) {
+              e.stopImmediatePropagation();
+            }, true);
+          `}
         </Script>
+
+        <MetaPixel />
 
         {children}
       </body>
