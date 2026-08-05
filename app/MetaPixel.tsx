@@ -2,7 +2,6 @@
 'use client'
 
 import { useEffect } from 'react'
-import MetaPixel from "./MetaPixel";
 
 const PIXEL_ID = '1383716853246156'
 
