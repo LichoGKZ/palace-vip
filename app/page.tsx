@@ -383,7 +383,7 @@ const previewChannels = [
                 {" "}
                 Discord{" "}
               </span>
-              con mas <TextImage text="contenido" fontSize={window.innerWidth > 768 ? 60 : 30} color="#ffffff" /> de Argentina.
+              con mas <TextImage text="contenido" fontSize={32} color="#ffffff" className="h-[30px] md:h-[60px] w-auto" /> de Argentina.
             </h1>
 
             {/* SUBTEXT */}
