@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { useEffect, useRef } from "react";
 import TextImage from './components/TextImage'
-import TextImage from './components/BigTextImage'
+import BigTextImage from './components/BigTextImage'
 
 import Image from "next/image";
 import lockIcon from "@/public/lock.png";
