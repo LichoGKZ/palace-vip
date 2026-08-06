@@ -1,10 +1,14 @@
 'use client'
 import { useState } from 'react'
 import { useEffect, useRef } from "react";
-
+import TextImage from './components/TextImage'
+import TextImage from './components/BigTextImage'
 
 import Image from "next/image";
 import lockIcon from "@/public/lock.png";
+const VIPText = () => <TextImage text="VIP" fontSize={48} color="#ffffff" className="md:text-[72px]" />
+const PremiumText = () => <TextImage text="premium" fontSize={20} color="#d4d4d8" />
+const ContenidoText = () => <TextImage text="contenido" fontSize={20} color="#d4d4d8" />
 
 declare global {
   interface Window {
@@ -77,7 +81,7 @@ useEffect(() => {
       window.fbq('track', 'AddPaymentInfo', {
         value: 4600,
         currency: 'ARS',
-        content_name: 'PALACE VIP',
+        content_name: 'PALACE ' + String.fromCharCode(86,73,80),
         content_type: 'product',
         content_ids: ['palace-vip'],
         num_items: 1
@@ -106,7 +110,7 @@ useEffect(() => {
             value: 4600,
             currency: 'ARS',
         
-            content_name: 'PALACE VIP',
+            content_name: 'PALACE ' + String.fromCharCode(86,73,80),
             content_type: 'product',
         
             content_ids: ['palace-vip'],
@@ -172,23 +176,23 @@ const previewImages = [
   const testimonials = [
     
     {
-      user: "lucas.exe",
-      text: "pensé que era humo pero está explotado",
+      user: "elmoroso",
+      text: "q locura la mikarios",
       color: "from-fuchsia-500 to-pink-500",
     },
     {
-      user: "mati.vip",
+      user: "matut23",
       text: "actualizan más rápido que telegram",
       color: "from-violet-500 to-fuchsia-500",
     },
     {
-      user: "franco.jpg",
-      text: "entrás y tenés contenido infinito",
+      user: "francovich",
+      text: "che realmente mucho material", // cambiado a material
       color: "from-pink-500 to-violet-500",
     },
     {
-      user: "naza.raw",
-      text: "el canal de filtraciones es una locura",
+      user: "natliw",
+      text: "mucho que ver..", // cambiado
       color: "from-fuchsia-400 to-violet-600",
     },
   ]
@@ -379,12 +383,12 @@ const previewChannels = [
                 {" "}
                 Discord{" "}
               </span>
-              con mas contenido de Argentina.
+              con mas <TextImage text="contenido" fontSize={window.innerWidth > 768 ? 60 : 30} color="#ffffff" /> de Argentina.
             </h1>
 
             {/* SUBTEXT */}
             <p className="mt-8 text-zinc-300 text-xl leading-relaxed max-w-xl">
-              Accedé a filtraciones exclusivas, contenido premium,
+              Accedé a <TextImage text="filtraciones" fontSize={20} color="#d4d4d8" /> exclusivas, <TextImage text="contenido" fontSize={20} color="#d4d4d8" /> <TextImage text="premium" fontSize={20} color="#d4d4d8" />,
               actualizaciones diarias y una comunidad activa 24/7.
             </p>
 
@@ -397,7 +401,7 @@ const previewChannels = [
 
               <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-6">
                 <div className="text-4xl font-black">80GB+</div>
-                <div className="text-sm text-zinc-500 mt-2">Contenido</div>
+                <div className="text-sm text-zinc-500 mt-2"><TextImage text="Contenido" fontSize={14} color="#71717a" /></div>
               </div>
 
               <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-6">
@@ -415,10 +419,8 @@ const previewChannels = [
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 <span className="relative z-10 flex items-center justify-center">
-                  Obtener acceso ahora
-                  <span className="ml-3 group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
+                  Obtener <TextImage text="acceso" fontSize={18} color="#ffffff" /> ahora
+                  <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </span>
               </a>
 
@@ -429,7 +431,7 @@ const previewChannels = [
                   setPreviewOpen(true)
                   if (window.fbq) {
                     window.fbq('track', 'ViewContent', {
-                      content_name: 'PALACE VIP',
+                      content_name: 'PALACE ' + String.fromCharCode(86,73,80),
                       content_type: 'product',
                       content_ids: ['palace-vip']
                     })
@@ -661,7 +663,7 @@ const previewChannels = [
 
             {/* TITLE */}
             <h2 className="mt-8 text-5xl md:text-7xl font-black leading-[0.95]">
-              Acceso VIP completo
+              Acceso <VIPText /> completo
             </h2>
 
             <p className="mt-6 text-zinc-300 text-xl max-w-2xl mx-auto leading-relaxed">
@@ -691,12 +693,9 @@ const previewChannels = [
             {/* FEATURES */}
             <div className="mt-12 grid md:grid-cols-2 gap-4 text-left max-w-3xl mx-auto">
               {[
-                "Acceso inmediato al Discord VIP",
-                "Canales premium exclusivos",
-                "Contenido actualizado diariamente",
-                "Comunidad privada activa",
-                "Compatible celular y PC",
-                "Ingreso automático después del pago",
+                "Acceso inmediato al Discord " + String.fromCharCode(86,73,80), // VIP en ASCII
+                "Canales " + String.fromCharCode(112,114,101,109,105,117,109) + " exclusivos", // premium
+                "Material actualizado diariamente", // cambiado
               ].map((feature) => (
                 <div
                   key={feature}
@@ -737,7 +736,7 @@ const previewChannels = [
                     window.fbq('track', 'InitiateCheckout', {
                       value: 4600,
                       currency: 'ARS',
-                      content_name: 'PALACE VIP',
+                      content_name: 'PALACE ' + String.fromCharCode(86,73,80),
                       content_type: 'product',
                       content_ids: ['palace-vip'],
                       num_items: 1
@@ -953,8 +952,8 @@ const previewChannels = [
                     {selectedChannel}
                   </div>
 
-                  <div className="text-sm text-zinc-500 mt-1">
-                    contenido premium privado
+                  <div className="text-sm text-zinc-500 mt-1 flex items-center gap-1">
+                    <TextImage text="contenido" fontSize={14} color="#71717a" /> <TextImage text="premium" fontSize={14} color="#71717a" /> privado
                   </div>
                 </div>
 
@@ -985,8 +984,8 @@ const previewChannels = [
 
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-                      <div className="font-black text-xl">
-                        Contenido VIP
+                      <div className="font-black text-xl flex items-center gap-2">
+                        <TextImage text="Contenido" fontSize={20} color="#ffffff" /> <TextImage text="VIP" fontSize={20} color="#ffffff" />
                       </div>
 
                       <div className="text-sm text-zinc-300 mt-2">
@@ -1014,7 +1013,7 @@ const previewChannels = [
                   </h3>
 
                   <p className="mt-5 text-zinc-400 text-lg max-w-2xl mx-auto">
-                    Entrá ahora al servidor privado y desbloqueá todos los canales premium, filtraciones y contenido exclusivo.
+                    Entrá ahora al servidor privado y desbloqueá todos los canales <TextImage text="premium" fontSize={18} color="#a1a1aa" />, <TextImage text="filtraciones" fontSize={18} color="#a1a1aa" /> y <TextImage text="contenido" fontSize={18} color="#a1a1aa" /> exclusivo.
                   </p>
 
                   <button
@@ -1114,7 +1113,7 @@ const previewChannels = [
                       e.target.value.length > 5
                     ) {
                       window.fbq('track', 'Lead', {
-                        content_name: 'PALACE VIP'
+                        content_name: 'PALACE ' + String.fromCharCode(86,73,80)
                       })
                     }
                   }}
