@@ -79,7 +79,7 @@ useEffect(() => {
     console.log('[META] window.fbq', window.fbq)
     if (window.fbq) {
       window.fbq('track', 'AddPaymentInfo', {
-        value: 4600,
+        value: 4800,
         currency: 'ARS',
         content_name: 'PALACE ' + String.fromCharCode(86,73,80),
         content_type: 'product',
@@ -107,7 +107,7 @@ useEffect(() => {
           'track',
           'Purchase',
           {
-            value: 4600,
+            value: 4800,
             currency: 'ARS',
         
             content_name: 'PALACE ' + String.fromCharCode(86,73,80),
@@ -734,7 +734,7 @@ const previewChannels = [
   
                 
                     window.fbq('track', 'InitiateCheckout', {
-                      value: 4600,
+                      value: 4800,
                       currency: 'ARS',
                       content_name: 'PALACE ' + String.fromCharCode(86,73,80),
                       content_type: 'product',
@@ -917,7 +917,7 @@ const previewChannels = [
 
                   if (window.fbq) {
                     window.fbq('track', 'InitiateCheckout', {
-                      value: 4600,
+                      value: 4800,
                       currency: 'ARS',
                     })
                   }
@@ -1022,7 +1022,7 @@ const previewChannels = [
 
                       if (window.fbq) {
                         window.fbq('track', 'InitiateCheckout', {
-                          value: 4600,
+                          value: 4800,
                           currency: 'ARS',
                         })
                       }
