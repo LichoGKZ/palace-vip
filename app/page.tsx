@@ -1082,12 +1082,9 @@ const previewChannels = [
           </div>
 
           <h2 className="mt-6 text-4xl md:text-5xl font-black leading-[0.95]">
-            Solicitud de acceso VIP
+            Acceder al Discord
           </h2>
 
-          <p className="mt-4 text-zinc-400 text-lg leading-relaxed">
-            Completá tus datos para desbloquear acceso completo al servidor privado.
-          </p>
         </div>
 
         {!approved ? (
@@ -1156,7 +1153,7 @@ const previewChannels = [
               </div>
 
               <div className="mt-5 text-sm text-zinc-500 leading-relaxed">
-                Luego de realizar la transferencia, presioná el botón inferior para habilitar tu acceso privado automáticamente.
+                La transferencia se verifica automaticamente y el acceso es instantaneo.
               </div>
 
             </div>
