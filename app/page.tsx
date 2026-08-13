@@ -870,41 +870,10 @@ export default function PalaceVIPLanding() {
                                 Copiado
                               </div>
                             ) : (
-                              <div className="flex items-center gap-2 text-zinc-400 text-sm">
-                                <svg
-                                  viewBox="0 0 24 24"
-                                  className="w-5 h-5"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="1.8"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                >
-                                  <rect
-                                    x="9"
-                                    y="9"
-                                    width="11"
-                                    height="11"
-                                    rx="2"
-                                  />
-                                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                                </svg>
-
-                                Copiar
-                              </div>
                             )}
                           </div>
                         </div>
                       </button>
-
-                      <div className="mt-5 text-sm text-zinc-500 leading-relaxed">
-                        Realizá la transferencia de{' '}
-                        <span className="text-zinc-300 font-semibold">
-                          $4.800
-                        </span>{' '}
-                        al alias indicado. Una vez realizada, esperá unos
-                        segundos y presioná el botón para continuar.
-                      </div>
                     </div>
                     {/* TITULAR */}
                     <div className="mt-8 rounded-[2rem] border border-white/10 bg-white/[0.025] p-6">
