@@ -602,13 +602,6 @@ export default function PalaceVIPLanding() {
                         Todo en un solo lugar.
                       </p>
 
-                      <div className="mt-8 flex flex-col items-center gap-3 text-sm text-zinc-400">
-                        <div className="flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                          18mil Usuarios en discord
-                        </div>
-                      </div>
-
                       <button
                         onClick={() => {
                           setPreviewOpen(false)
