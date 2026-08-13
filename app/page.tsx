@@ -423,6 +423,9 @@ export default function PalaceVIPLanding() {
                         ×
                       </span>
                     </div>
+                    <p className="mt-3 text-[10px] md:text-xs text-fuchsia-200 font-bold">
+                      Falta todo lo de Erome
+                    </p>
                   </div>
 
                   {/* PALACE */}
@@ -454,6 +457,9 @@ export default function PalaceVIPLanding() {
                         ×
                       </span>
                     </div>
+                    <p className="mt-3 text-[10px] md:text-xs text-fuchsia-200 font-bold">
+                      Falta todo lo de OnlyFans
+                    </p>
                   </div>
               
                 </div>
