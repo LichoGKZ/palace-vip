@@ -361,18 +361,12 @@ const previewChannels = [
 
             {/* CTA */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <a
-                href="#checkout"
-                className="group relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-6 py-4 text-base md:px-10 md:py-6 md:text-xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.02] transition-all duration-300 text-center"
-              >
-                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-
               <button
                 onClick={() => {
                   sendLog('preview')
-
+            
                   setPreviewOpen(true)
+            
                   if (window.fbq) {
                     window.fbq('track', 'ViewContent', {
                       content_name: 'PALACE ' + String.fromCharCode(86,73,80),
@@ -380,18 +374,21 @@ const previewChannels = [
                       content_ids: ['palace-vip']
                     })
                   }
+            
                   setPreviewLocked(false)
-
+            
                   sendLog('preview_open')
-
-                  // después de 2 segundos se bloquea
+            
                   const timer = setTimeout(() => {
                     setPreviewLocked(true)
                   }, 4000)
-
+            
                   setPreviewTimer(timer)
                 }}
+                className="group relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-8 py-4 text-base md:px-10 md:py-6 md:text-xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.02] transition-all duration-300"
               >
+                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Ver contenido
                   <span className="group-hover:translate-x-1 transition-transform">
