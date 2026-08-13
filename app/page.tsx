@@ -586,34 +586,6 @@ export default function PalaceVIPLanding() {
                   <div className="flex items-center gap-4 mb-8">
                     <div></div>
                   </div>
-
-                  <div className="space-y-2 overflow-y-auto h-[500px] pr-2">
-                    {previewChannels.map((channel) => (
-                      <button
-                        key={channel}
-                        onClick={() => {
-                          setSelectedChannel(channel)
-
-                          sendLog('preview', {
-                            channel,
-                          })
-                        }}
-                        className={`w-full text-left px-4 py-3 rounded-2xl transition-all duration-300 flex items-center gap-3 ${
-                          selectedChannel === channel
-                            ? 'bg-gradient-to-r from-fuchsia-500/20 to-violet-500/20 border border-fuchsia-500/20 text-white shadow-[0_0_30px_rgba(217,70,239,0.15)]'
-                            : 'hover:bg-white/[0.05] text-zinc-400'
-                        }`}
-                      >
-                        <span className="text-zinc-500">#</span>
-
-                        <span className="font-semibold">
-                          {channel.replace('# ', '')}
-                        </span>
-
-                        <div className="ml-auto w-2 h-2 rounded-full bg-fuchsia-400 animate-pulse" />
-                      </button>
-                    ))}
-                  </div>
                 </div>
 
                 {/* CONTENT */}
