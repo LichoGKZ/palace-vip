@@ -177,7 +177,7 @@ export default function Page() {
           </div>
 
           <div className="mt-1 text-[13px] font-medium text-white/80">
-            ¡Copia la invitación y pegala en Discord!
+            ¡Toca este cuadro y segui los pasos!
           </div>
 
           <div className="mt-2 inline-flex items-center gap-2 rounded-md bg-black/25 px-3 py-1.5 font-mono text-[14px] font-bold text-yellow-200">
