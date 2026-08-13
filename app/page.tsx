@@ -424,19 +424,7 @@ export default function PalaceVIPLanding() {
                       </span>
                     </div>
                   </div>
-              
-                  {/* GTA */}
-                  <div className="relative rounded-2xl md:rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-4 md:p-5 text-center opacity-60">
-                    <div className="text-xs md:text-sm font-black text-zinc-500 uppercase tracking-wider">
-                      Erome
-                    </div>
-              
-                    <div className="mt-4 mx-auto w-10 h-10 md:w-12 md:h-12 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center">
-                      <span className="text-red-500 text-2xl md:text-3xl font-black">
-                        ×
-                      </span>
-                    </div>
-                  </div>
+
                   {/* PALACE */}
                   <div className="relative rounded-2xl md:rounded-[1.5rem] border border-fuchsia-500/40 bg-gradient-to-b from-fuchsia-500/10 to-violet-600/5 p-4 md:p-5 text-center shadow-[0_0_35px_rgba(217,70,239,0.12)]">
               
@@ -453,6 +441,19 @@ export default function PalaceVIPLanding() {
                     <p className="mt-3 text-[10px] md:text-xs text-fuchsia-200 font-bold">
                       Todo en un lugar
                     </p>
+                  </div>
+                  
+                  {/* GTA */}
+                  <div className="relative rounded-2xl md:rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-4 md:p-5 text-center opacity-60">
+                    <div className="text-xs md:text-sm font-black text-zinc-500 uppercase tracking-wider">
+                      Erome
+                    </div>
+              
+                    <div className="mt-4 mx-auto w-10 h-10 md:w-12 md:h-12 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <span className="text-red-500 text-2xl md:text-3xl font-black">
+                        ×
+                      </span>
+                    </div>
                   </div>
               
                 </div>
