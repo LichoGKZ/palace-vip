@@ -162,7 +162,7 @@ export default function Page() {
               Unite a nuestro Discord
             </h1>
             <p className="mt-1 text-[14px] text-white/60 sm:text-[15px]">
-              Comunidad de Albion Online
+              Todos los OnlyFans en un solo lugar
             </p>
           </div>
 
