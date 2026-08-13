@@ -679,10 +679,6 @@ export default function PalaceVIPLanding() {
                     <div className="mt-8 rounded-[2rem] border border-fuchsia-500/20 bg-fuchsia-500/5 p-6">
                       <div className="flex items-center justify-between gap-4 flex-wrap">
                         <div>
-                          <div className="text-sm text-zinc-500">
-                            Acceso al Discord
-                          </div>
-
                           <div className="text-5xl font-black mt-2">
                             $4.800
                           </div>
