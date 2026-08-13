@@ -1259,94 +1259,96 @@ const previewChannels = [
                 <div className="h-px flex-1 bg-fuchsia-500/20" />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
 
                 {/* STEP 1 */}
-                <div className="relative text-center">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 w-7 h-7 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white text-xs font-black flex items-center justify-center shadow-lg">
-                    1
+                <div className="relative text-center min-w-0">
+                  <div className="h-7 flex items-center justify-center">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white text-xs font-black flex items-center justify-center shadow-lg">
+                      1
+                    </div>
                   </div>
 
-                  <div className="mx-auto pt-5 w-16 h-16 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center">
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="w-8 h-8 text-fuchsia-300"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M20.3 4.7A10 10 0 0 0 3.1 5.9 10 10 0 0 0 2 10.7c0 1.9.5 3.7 1.5 5.2L2 22l6.2-1.6A10 10 0 0 0 12 21c5.5 0 10-4.5 10-10 0-2.4-.6-4.5-1.7-6.3Z"/>
-                      <path d="M8.2 8.1c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.9c.1.3.1.4-.1.6l-.8.8c.8 1.4 1.9 2.4 3.3 3.2l.8-.8c.2-.2.4-.2.6-.1l1.9.8c.3.1.4.3.4.5v.5c0 .3-.1.6-.4.8-.3.2-.8.4-1.2.4-1.2 0-2.6-.7-4.1-2.1S9 11.7 8.6 10.5c-.2-.7-.3-1.7-.4-2.4Z" fill="#0a0a0a"/>
-                    </svg>
+                  <div className="mt-3 h-16 flex items-center justify-center">
+                    {new_icon}
                   </div>
 
-                  <h5 className="mt-5 font-black text-lg">
+                  <h5 className="mt-5 min-h-[28px] flex items-center justify-center font-black text-lg">
                     Entrá al Discord
                   </h5>
 
-                  <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
+                  <p className="mt-2 min-h-[48px] text-sm text-zinc-500 leading-relaxed flex items-start justify-center">
                     Hacé clic en el botón de abajo para ingresar al servidor VIP.
                   </p>
                 </div>
 
                 {/* STEP 2 */}
-                <div className="relative text-center">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 w-7 h-7 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white text-xs font-black flex items-center justify-center shadow-lg">
-                    2
+                <div className="relative text-center min-w-0">
+                  <div className="h-7 flex items-center justify-center">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white text-xs font-black flex items-center justify-center shadow-lg">
+                      2
+                    </div>
                   </div>
 
-                  <div className="mx-auto pt-5 w-16 h-16 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center">
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="w-8 h-8 text-fuchsia-300"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <rect x="5" y="3" width="14" height="18" rx="2" />
-                      <path d="M8 8h8M8 12h6M8 16h4" />
-                      <path d="M16 16v5M13.5 18.5 16 16l2.5 2.5" />
-                    </svg>
+                  <div className="mt-3 h-16 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="w-8 h-8 text-fuchsia-300"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect x="5" y="3" width="14" height="18" rx="2" />
+                        <path d="M8 8h8M8 12h6M8 16h4" />
+                        <path d="M16 16v5M13.5 18.5 16 16l2.5 2.5" />
+                      </svg>
+                    </div>
                   </div>
 
-                  <h5 className="mt-5 font-black text-lg">
+                  <h5 className="mt-5 min-h-[28px] flex items-center justify-center font-black text-lg">
                     Enviá tu comprobante
                   </h5>
 
-                  <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
+                  <p className="mt-2 min-h-[48px] text-sm text-zinc-500 leading-relaxed flex items-start justify-center">
                     En el canal indicado, enviá tu comprobante de pago.
                   </p>
                 </div>
 
                 {/* STEP 3 */}
-                <div className="relative text-center">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 w-7 h-7 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white text-xs font-black flex items-center justify-center shadow-lg">
-                    3
+                <div className="relative text-center min-w-0">
+                  <div className="h-7 flex items-center justify-center">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white text-xs font-black flex items-center justify-center shadow-lg">
+                      3
+                    </div>
                   </div>
 
-                  <div className="mx-auto pt-5 w-16 h-16 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center">
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="w-8 h-8 text-fuchsia-300"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M12 3 20 7v5c0 4.8-3.1 7.9-8 9-4.9-1.1-8-4.2-8-9V7l8-4Z" />
-                      <path d="m8.5 12 2.3 2.3 4.8-5" />
-                    </svg>
+                  <div className="mt-3 h-16 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="w-8 h-8 text-fuchsia-300"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 3 20 7v5c0 4.8-3.1 7.9-8 9-4.9-1.1-8-4.2-8-9V7l8-4Z" />
+                        <path d="m8.5 12 2.3 2.3 4.8-5" />
+                      </svg>
+                    </div>
                   </div>
 
-                  <h5 className="mt-5 font-black text-lg">
+                  <h5 className="mt-5 min-h-[28px] flex items-center justify-center font-black text-lg">
                     Esperá la verificación
                   </h5>
 
-                  <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
+                  <p className="mt-2 min-h-[48px] text-sm text-zinc-500 leading-relaxed flex items-start justify-center">
                     Verificaremos tu pago en un plazo maximo de 5 minutos.
                   </p>
                 </div>
