@@ -37,7 +37,8 @@ export default function PalaceVIPLanding() {
   const [previewOpen, setPreviewOpen] = useState(false)
   const [selectedChannel, setSelectedChannel] = useState('')
   const [previewLocked, setPreviewLocked] = useState(false)
-  const [previewTimer, setPreviewTimer] = useState<NodeJS.Timeout | null>(null)
+  const [previewTimer, setPreviewTimer] =
+    useState<NodeJS.Timeout | null>(null)
 
   const sendLog = async (type: string, extra: any = {}) => {
     try {
@@ -81,6 +82,16 @@ export default function PalaceVIPLanding() {
   }, [])
 
   const handleAccess = async () => {
+    // VALIDACIÓN DEL EMAIL
+    const cleanEmail = email.trim()
+
+    if (
+      !cleanEmail ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)
+    ) {
+      return
+    }
+
     console.log('[META] window.fbq', window.fbq)
 
     if (window.fbq) {
@@ -137,11 +148,11 @@ export default function PalaceVIPLanding() {
     }
 
     sendLog('pago', {
-      email,
+      email: cleanEmail,
     })
 
     sendLog('purchase', {
-      email,
+      email: cleanEmail,
       eventId,
     })
 
@@ -303,6 +314,9 @@ export default function PalaceVIPLanding() {
     '# luli-bustos',
   ]
 
+  const isEmailValid =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
+
   return (
     <>
       <div className="min-h-screen bg-black text-white overflow-hidden relative">
@@ -336,7 +350,6 @@ export default function PalaceVIPLanding() {
         {/* HERO */}
         <section className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* LEFT */}
             <div>
               <h1 className="text-3xl leading-tight md:text-6xl font-black tracking-tight">
                 El servidor de
@@ -375,7 +388,6 @@ export default function PalaceVIPLanding() {
                 , actualizaciones diarias y una comunidad activa 24/7.
               </p>
 
-              {/* CTA */}
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => {
@@ -416,7 +428,6 @@ export default function PalaceVIPLanding() {
               </div>
             </div>
 
-            {/* FLOATING SOCIAL */}
             <div className="relative hidden lg:block">
               <div className="absolute -bottom-8 -left-8">
                 <div className="rounded-[2rem] border border-white/10 bg-black/60 backdrop-blur-2xl px-6 py-5 shadow-2xl">
@@ -480,7 +491,6 @@ export default function PalaceVIPLanding() {
           </div>
         </section>
 
-
         {/* FOOTER */}
         <footer className="relative z-10 border-t border-white/10 py-12 text-center">
           <div className="text-zinc-500 text-sm">
@@ -520,10 +530,8 @@ export default function PalaceVIPLanding() {
         {previewOpen && (
           <div className="fixed inset-0 z-[998] bg-black/90 backdrop-blur-2xl flex items-center justify-center p-4">
             <div className="relative w-full max-w-6xl h-[85vh] rounded-[2.5rem] overflow-hidden border border-white/10 bg-[#0a0a0a] shadow-[0_0_120px_rgba(217,70,239,0.25)]">
-              {/* GLOW */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.18),transparent_45%)]" />
 
-              {/* CLOSE */}
               <button
                 onClick={() => {
                   setPreviewOpen(false)
@@ -542,14 +550,10 @@ export default function PalaceVIPLanding() {
               <div className="relative z-10 flex flex-col md:flex-row h-full">
                 {/* SIDEBAR */}
                 <div className="w-full md:w-[320px] border-r md:border-r border-b md:border-b-0 border-white/10 bg-black/40 backdrop-blur-2xl p-4 md:p-5 overflow-y-auto max-h-[40vh] md:max-h-none">
-                  {/* SERVER */}
                   <div className="flex items-center gap-4 mb-8">
-
-                    <div>
-                    </div>
+                    <div></div>
                   </div>
 
-                  {/* CHANNELS */}
                   <div className="space-y-2 overflow-y-auto h-[500px] pr-2">
                     {previewChannels.map((channel) => (
                       <button
@@ -628,7 +632,6 @@ export default function PalaceVIPLanding() {
                     </div>
                   ) : (
                     <div className="h-full flex flex-col">
-                      {/* TOP */}
                       <div className="border-b border-white/10 px-8 py-5 bg-black/30 backdrop-blur-xl flex items-center justify-between">
                         <div>
                           <div className="text-2xl font-black">
@@ -639,7 +642,6 @@ export default function PalaceVIPLanding() {
                         <div className="flex items-center gap-3 text-sm text-zinc-500" />
                       </div>
 
-                      {/* MAIN */}
                       <div className="flex-1 p-8 overflow-y-auto">
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                           {previewImages.map((img, i) => (
@@ -677,7 +679,6 @@ export default function PalaceVIPLanding() {
                           ))}
                         </div>
 
-                        {/* CTA */}
                         <div className="mt-12 rounded-[2.5rem] border border-fuchsia-500/20 bg-gradient-to-b from-fuchsia-500/10 to-black p-10 text-center shadow-[0_0_80px_rgba(217,70,239,0.12)]">
                           <div className="inline-flex items-center gap-3 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/10 px-5 py-3 text-sm text-fuchsia-200">
                             🔥 acceso limitado hoy
@@ -751,10 +752,8 @@ export default function PalaceVIPLanding() {
         {open && (
           <div className="fixed inset-0 z-[999] overflow-y-auto overscroll-contain bg-black/80 backdrop-blur-xl p-4">
             <div className="relative w-full max-w-4xl max-h-[calc(100dvh-2rem)] my-auto mx-auto overflow-y-auto overscroll-contain rounded-[2.5rem] border border-white/10 bg-[#0a0a0a] shadow-[0_0_80px_rgba(217,70,239,0.25)]">
-              {/* GLOW */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.18),transparent_45%)]" />
 
-              {/* CLOSE */}
               <button
                 onClick={() => setOpen(false)}
                 className="absolute top-5 right-5 z-20 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 transition-all"
@@ -763,7 +762,6 @@ export default function PalaceVIPLanding() {
               </button>
 
               <div className="relative z-10 p-8 md:p-10">
-                {/* HEADER */}
                 <div className="text-center">
                   <h2 className="mt-6 text-4xl md:text-5xl font-black leading-[0.95]">
                     Acceder al Discord
@@ -798,8 +796,19 @@ export default function PalaceVIPLanding() {
                               })
                             }
                           }}
-                          className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 outline-none focus:border-fuchsia-500/40 transition-all"
+                          className={`w-full rounded-2xl border bg-white/[0.04] px-5 py-4 outline-none transition-all ${
+                            email.length > 0 && !isEmailValid
+                              ? 'border-red-500/50 focus:border-red-500/70'
+                              : 'border-white/10 focus:border-fuchsia-500/40'
+                          }`}
                         />
+
+                        {/* EMAIL VALIDATION */}
+                        {email.length > 0 && !isEmailValid && (
+                          <p className="mt-2 text-sm text-red-400">
+                            Ingresá un email válido para continuar.
+                          </p>
+                        )}
                       </div>
                     </div>
 
@@ -841,8 +850,8 @@ export default function PalaceVIPLanding() {
                     {/* BUTTON */}
                     <button
                       onClick={handleAccess}
-                      disabled={loading}
-                      className="group relative overflow-hidden mt-8 w-full rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-6 py-4 text-base md:px-10 md:py-6 md:text-xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.01] transition-all duration-300 disabled:opacity-70"
+                      disabled={loading || !isEmailValid}
+                      className="group relative overflow-hidden mt-8 w-full rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-6 py-4 text-base md:px-10 md:py-6 md:text-xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.01] transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
                       <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
