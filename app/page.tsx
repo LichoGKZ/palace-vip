@@ -837,44 +837,27 @@ export default function PalaceVIPLanding() {
                             <div className="text-sm text-zinc-500">
                               Alias de transferencia
                             </div>
-                            <button
-                              type="button"
-                              onClick={async () => {
-                                try {
-                                  await navigator.clipboard.writeText('licho380.macro')
-                                } catch (err) {
-                                  console.error('No se pudo copiar el alias', err)
-                                }
-                              }}
-                              className="mt-2 text-2xl font-black tracking-wide text-left hover:text-fuchsia-300 transition-colors"
-                            >
+                      
+                            <div className="mt-2 text-2xl font-black tracking-wide">
                               licho380.macro
-                            </button>
+                            </div>
                           </div>
-
-                          <div className="shrink-0">
-                            {aliasCopied ? (
-                              <div className="flex items-center gap-2 text-green-400 text-sm font-bold">
-                                <svg
-                                  viewBox="0 0 24 24"
-                                  className="w-5 h-5"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                >
-                                  <path d="m5 12 4 4L19 6" />
-                                </svg>
-
-                                Copiado
-                              </div>
-                            ) : (
-                            )}
-                          </div>
+                      
+                          {aliasCopied && (
+                            <svg
+                              viewBox="0 0 24 24"
+                              className="w-5 h-5 text-green-400 shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="m5 12 4 4L19 6" />
+                            </svg>
+                          )}
                         </div>
                       </button>
-                    </div>
                     {/* TITULAR */}
                     <div className="mt-8 rounded-[2rem] border border-white/10 bg-white/[0.025] p-6">
                       <label className="text-sm text-zinc-400 block mb-2">
