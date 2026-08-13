@@ -861,6 +861,7 @@ export default function PalaceVIPLanding() {
                           )}
                         </div>
                       </button>
+                    </div>
                     {/* TITULAR */}
                     <div className="mt-8 rounded-[2rem] border border-white/10 bg-white/[0.025] p-6">
                       <label className="text-sm text-zinc-400 block mb-2">
