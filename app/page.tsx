@@ -1060,7 +1060,7 @@ const previewChannels = [
       {/* ACCESS MODAL */}
 {open && (
   <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-xl p-4">
-    <div className="relative w-full max-w-2xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0a0a0a] shadow-[0_0_80px_rgba(217,70,239,0.25)]">
+    <div className="relative w-full max-w-4xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0a0a0a] shadow-[0_0_80px_rgba(217,70,239,0.25)]">
 
       {/* GLOW */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.18),transparent_45%)]" />
@@ -1201,38 +1201,199 @@ const previewChannels = [
             </div>
           </>
         ) : (
-          <div className="py-10">
+          <div className="py-4 md:py-6">
 
-            {/* SUCCESS */}
-            <div className="mx-auto w-24 h-24 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-5xl shadow-[0_0_60px_rgba(16,185,129,0.45)]">
-              ✓
-            </div>
+            {/* PAYMENT CONFIRMED / NEXT STEP */}
+            <div className="text-center">
 
-            <div className="text-center mt-8">
-              <h3 className="text-4xl font-black">
-                Acceso habilitado
+              {/* BADGE */}
+
+
+              {/* TITLE */}
+              <h3 className="mt-7 text-4xl md:text-5xl font-black leading-[0.95]">
+                ¡Ultimo paso!
               </h3>
 
-              <p className="mt-4 text-zinc-400 text-lg leading-relaxed">
-                Tu acceso privado fue aprobado correctamente.
+              {/* ICON */}
+              <div className="mx-auto mt-8 w-28 h-28 rounded-full bg-gradient-to-br from-fuchsia-500/20 to-violet-600/30 border border-fuchsia-400/40 flex items-center justify-center shadow-[0_0_60px_rgba(217,70,239,0.4)]">
+                <div className="w-16 h-16 rounded-full border-2 border-fuchsia-300/80 flex items-center justify-center">
+                  <svg
+                    viewBox="0 0 64 64"
+                    className="w-10 h-10 text-fuchsia-200"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="15" y="8" width="34" height="44" rx="5" />
+                    <path d="M23 20h18M23 29h18M23 38h9" />
+                    <circle cx="45" cy="45" r="10" fill="#0a0a0a" />
+                    <path d="m40.5 45 3 3 5.5-6" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* MAIN MESSAGE */}
+              <h4 className="mt-8 text-2xl md:text-3xl font-black">
+                Ahora enviá tu{" "}
+                <span className="text-fuchsia-400">comprobante</span> en Discord
+              </h4>
+
+              <p className="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                Debés ingresar al servidor y enviar tu comprobante de pago
+                para que podamos verificarlo y habilitarte el acceso al{" "}
+                <span className="text-fuchsia-400 font-semibold">contenido VIP</span>.
               </p>
             </div>
 
-            {/* INVITE */}
-            <div className="mt-10 rounded-[2rem] border border-green-500/20 bg-green-500/5 p-6 text-center">
+            {/* STEPS */}
+            <div className="mt-10 rounded-[2rem] border border-white/10 bg-white/[0.025] p-6 md:p-8">
 
-              <div className="text-sm text-zinc-500">
-                Invitación privada
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px flex-1 bg-fuchsia-500/20" />
+                <div className="text-fuchsia-300 font-bold">
+                  ¿Qué sigue?
+                </div>
+                <div className="h-px flex-1 bg-fuchsia-500/20" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                {/* STEP 1 */}
+                <div className="relative text-center">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 w-7 h-7 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white text-xs font-black flex items-center justify-center shadow-lg">
+                    1
+                  </div>
+
+                  <div className="mx-auto pt-5 w-16 h-16 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-8 h-8 text-fuchsia-300"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path d="M20.3 4.7A10 10 0 0 0 3.1 5.9 10 10 0 0 0 2 10.7c0 1.9.5 3.7 1.5 5.2L2 22l6.2-1.6A10 10 0 0 0 12 21c5.5 0 10-4.5 10-10 0-2.4-.6-4.5-1.7-6.3Z"/>
+                      <path d="M8.2 8.1c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.9c.1.3.1.4-.1.6l-.8.8c.8 1.4 1.9 2.4 3.3 3.2l.8-.8c.2-.2.4-.2.6-.1l1.9.8c.3.1.4.3.4.5v.5c0 .3-.1.6-.4.8-.3.2-.8.4-1.2.4-1.2 0-2.6-.7-4.1-2.1S9 11.7 8.6 10.5c-.2-.7-.3-1.7-.4-2.4Z" fill="#0a0a0a"/>
+                    </svg>
+                  </div>
+
+                  <h5 className="mt-5 font-black text-lg">
+                    Entrá al Discord
+                  </h5>
+
+                  <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
+                    Hacé clic en el botón de abajo para ingresar al servidor VIP.
+                  </p>
+                </div>
+
+                {/* STEP 2 */}
+                <div className="relative text-center">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 w-7 h-7 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white text-xs font-black flex items-center justify-center shadow-lg">
+                    2
+                  </div>
+
+                  <div className="mx-auto pt-5 w-16 h-16 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-8 h-8 text-fuchsia-300"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="5" y="3" width="14" height="18" rx="2" />
+                      <path d="M8 8h8M8 12h6M8 16h4" />
+                      <path d="M16 16v5M13.5 18.5 16 16l2.5 2.5" />
+                    </svg>
+                  </div>
+
+                  <h5 className="mt-5 font-black text-lg">
+                    Enviá tu comprobante
+                  </h5>
+
+                  <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
+                    En el canal indicado, enviá tu comprobante de pago.
+                  </p>
+                </div>
+
+                {/* STEP 3 */}
+                <div className="relative text-center">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 w-7 h-7 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white text-xs font-black flex items-center justify-center shadow-lg">
+                    3
+                  </div>
+
+                  <div className="mx-auto pt-5 w-16 h-16 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-8 h-8 text-fuchsia-300"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 3 20 7v5c0 4.8-3.1 7.9-8 9-4.9-1.1-8-4.2-8-9V7l8-4Z" />
+                      <path d="m8.5 12 2.3 2.3 4.8-5" />
+                    </svg>
+                  </div>
+
+                  <h5 className="mt-5 font-black text-lg">
+                    Esperá la verificación
+                  </h5>
+
+                  <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
+                    Verificaremos tu pago en un plazo maximo de 5 minutos.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+            {/* DISCORD CTA */}
+            <div className="mt-8 rounded-[2rem] border border-green-500/20 bg-green-500/[0.04] p-6 md:p-7 text-center shadow-[0_0_40px_rgba(34,197,94,0.05)]">
+
+              <div className="text-sm text-zinc-400">
+                Accedé ahora
               </div>
 
               <div className="mt-4">
                 <a
                   href="https://discord.gg/UeNTdRunZ"
                   target="_blank"
-                  className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-green-400 to-emerald-500 px-8 py-5 text-lg font-black text-black hover:scale-[1.02] transition-all"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-green-400 to-emerald-500 px-8 py-5 text-lg md:text-xl font-black text-black shadow-[0_0_35px_rgba(34,197,94,0.25)] hover:scale-[1.02] transition-all"
                 >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-7 h-7"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M19.5 5.2A16.6 16.6 0 0 0 15.4 4l-.5 1.1a15.8 15.8 0 0 0-5.8 0L8.6 4a16.7 16.7 0 0 0-4.1 1.2C1.9 9.2 1.2 13 1.5 16.8a16.4 16.4 0 0 0 5 2.5l1.2-1.6a10.7 10.7 0 0 1-1.8-.9l.4-.3c3.6 1.7 7.5 1.7 11.1 0l.4.3c-.6.4-1.2.7-1.8.9l1.2 1.6a16.4 16.4 0 0 0 5-2.5c.4-4.4-.7-8.2-2.7-11.6ZM8.7 15.1c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Zm6.6 0c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Z"/>
+                  </svg>
                   Entrar al servidor VIP →
                 </a>
+              </div>
+
+              <div className="mt-5 flex items-center justify-center gap-2 text-sm text-zinc-500">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-4 h-4 text-fuchsia-400"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3 20 7v5c0 4.8-3.1 7.9-8 9-4.9-1.1-8-4.2-8-9V7l8-4Z" />
+                </svg>
+                El acceso al contenido VIP se habilita únicamente después de verificar tu pago (no demora mas de 5 minutos).
               </div>
 
             </div>
