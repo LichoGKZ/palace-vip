@@ -33,7 +33,7 @@ export default function PalaceVIPLanding() {
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [approved, setApproved] = useState(false)
-  const [email, setEmail] = useState('')
+  const [titular, setTitular] = useState('')
   const [previewOpen, setPreviewOpen] = useState(false)
   const [selectedChannel, setSelectedChannel] = useState('')
   const [previewLocked, setPreviewLocked] = useState(false)
@@ -96,7 +96,7 @@ export default function PalaceVIPLanding() {
 
     const timer = setTimeout(() => {
       setTransferReady(true)
-    }, 7000)
+    }, 10000)
 
     return () => {
       clearTimeout(timer)
@@ -119,12 +119,9 @@ export default function PalaceVIPLanding() {
 
   const handleAccess = async () => {
     // VALIDACIÓN DEL EMAIL
-    const cleanEmail = email.trim()
-
-    if (
-      !cleanEmail ||
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)
-    ) {
+    const cleanTitular = titular.trim()
+    
+    if (!cleanTitular || cleanTitular.split(/\s+/).length < 2) {
       return
     }
 
@@ -184,11 +181,11 @@ export default function PalaceVIPLanding() {
     }
 
     sendLog('pago', {
-      email: cleanEmail,
+      titular: cleanTitular,
     })
-
+    
     sendLog('purchase', {
-      email: cleanEmail,
+      titular: cleanTitular,
       eventId,
     })
 
@@ -350,8 +347,8 @@ export default function PalaceVIPLanding() {
     '# luli-bustos',
   ]
 
-  const isEmailValid =
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
+  const isTitularValid =
+    titular.trim().split(/\s+/).length >= 2
 
   return (
     <>
@@ -810,48 +807,7 @@ export default function PalaceVIPLanding() {
 
                 {!approved ? (
                   <>
-                    {/* FORM */}
-                    <div className="mt-10 space-y-5">
-                      <div>
-                        <label className="text-sm text-zinc-400 block mb-2">
-                          Email
-                        </label>
-
-                        <input
-                          type="email"
-                          placeholder="tuemail@gmail.com"
-                          value={email}
-                          onChange={(e) => {
-                            setEmail(e.target.value)
-
-                            if (
-                              window.fbq &&
-                              e.target.value.includes('@') &&
-                              e.target.value.length > 5
-                            ) {
-                              window.fbq('track', 'Lead', {
-                                content_name:
-                                  'PALACE ' +
-                                  String.fromCharCode(86, 73, 80),
-                              })
-                            }
-                          }}
-                          className={`w-full rounded-2xl border bg-white/[0.04] px-5 py-4 outline-none transition-all ${
-                            email.length > 0 && !isEmailValid
-                              ? 'border-red-500/50 focus:border-red-500/70'
-                              : 'border-white/10 focus:border-fuchsia-500/40'
-                          }`}
-                        />
-
-                        {/* EMAIL VALIDATION */}
-                        {email.length > 0 && !isEmailValid && (
-                          <p className="mt-2 text-sm text-red-400">
-                            Ingresá un email válido para continuar.
-                          </p>
-                        )}
-                      </div>
-                    </div>
-
+                    
                     {/* PAYMENT */}
                     <div className="mt-8 rounded-[2rem] border border-fuchsia-500/20 bg-fuchsia-500/5 p-6">
                       <div className="flex items-center justify-between gap-4 flex-wrap">
@@ -869,6 +825,55 @@ export default function PalaceVIPLanding() {
                           </div>
                         </div>
                       </div>
+                    {/* TITULAR */}
+                    <div className="mt-8 rounded-[2rem] border border-white/10 bg-white/[0.025] p-6">
+                      <label className="text-sm text-zinc-400 block mb-2">
+                        Nombre del titular de la cuenta
+                      </label>
+                    
+                      <p className="text-xs text-zinc-500 mb-4">
+                        ¿A nombre de quién has transferido?
+                      </p>
+                    
+                      <input
+                        type="text"
+                        placeholder="Nombre y apellido"
+                        value={titular}
+                        onChange={(e) => {
+                          const value = e.target.value
+                    
+                          // Solo letras, espacios y caracteres habituales de nombres
+                          const cleaned = value.replace(
+                            /[^a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]/g,
+                            ''
+                          )
+                    
+                          setTitular(cleaned)
+                    
+                          if (
+                            window.fbq &&
+                            cleaned.trim().split(/\s+/).length >= 2
+                          ) {
+                            window.fbq('track', 'Lead', {
+                              content_name:
+                                'PALACE ' +
+                                String.fromCharCode(86, 73, 80),
+                            })
+                          }
+                        }}
+                        className={`w-full rounded-2xl border bg-white/[0.04] px-5 py-4 outline-none transition-all ${
+                          titular.length > 0 && !isTitularValid
+                            ? 'border-red-500/50 focus:border-red-500/70'
+                            : 'border-white/10 focus:border-fuchsia-500/40'
+                        }`}
+                      />
+                    
+                      {titular.length > 0 && !isTitularValid && (
+                        <p className="mt-2 text-sm text-red-400">
+                          Ingresá nombre y apellido.
+                        </p>
+                      )}
+                    </div>
 
                       {/* WAITING TRANSFER */}
                       <div className="mt-8 flex items-center justify-center gap-3 rounded-2xl border border-fuchsia-500/20 bg-fuchsia-500/10 px-5 py-4">
@@ -992,21 +997,6 @@ export default function PalaceVIPLanding() {
                           </span>
                         </button>
                       )}
-                    </div>
-
-                    {/* SECURITY */}
-                    <div className="mt-6 flex flex-wrap gap-3 text-sm">
-                      <div className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-zinc-400">
-                        acceso automático
-                      </div>
-
-                      <div className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-zinc-400">
-                        servidor privado
-                      </div>
-
-                      <div className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-zinc-400">
-                        comunidad activa
-                      </div>
                     </div>
                   </>
                 ) : (
