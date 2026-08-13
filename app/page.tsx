@@ -1236,7 +1236,7 @@ const previewChannels = [
 
               <div className="mt-4">
                 <a
-                  href="https://discord.gg/SGWcJ4HPY"
+                  href="https://discord.gg/UeNTdRunZ"
                   target="_blank"
                   className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-green-400 to-emerald-500 px-8 py-5 text-lg font-black text-black hover:scale-[1.02] transition-all"
                 >
