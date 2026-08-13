@@ -205,69 +205,69 @@ export default function Page() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+          <div className="grid grid-cols-3 gap-2 sm:gap-5">
           
             {/* PASO 1 */}
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#2b2d31]/80 shadow-lg">
-              <div className="flex w-full items-center justify-center bg-black/20 p-2">
+            <div className="overflow-hidden rounded-xl sm:rounded-2xl border border-white/10 bg-[#2b2d31]/80 shadow-lg">
+              <div className="flex w-full items-center justify-center bg-black/20 p-1.5 sm:p-2">
                 <Image
                   src="/paso1.jpeg"
                   alt="Paso 1 - Añadir un servidor en Discord"
                   width={500}
                   height={900}
-                  className="h-auto max-h-[520px] w-full object-contain"
+                  className="h-auto max-h-[260px] sm:max-h-[520px] w-full object-contain"
                 />
               </div>
           
-              <div className="px-3 py-3 text-center">
-                <div className="text-xs font-black text-[#5865F2]">
+              <div className="px-1 py-2 sm:px-3 sm:py-3 text-center">
+                <div className="text-[9px] sm:text-xs font-black text-[#5865F2]">
                   PASO 1
                 </div>
-                <p className="mt-1 text-sm font-semibold text-white/80">
+                <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-sm font-semibold text-white/80">
                   Tocá el +
                 </p>
               </div>
             </div>
           
             {/* PASO 2 */}
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#2b2d31]/80 shadow-lg">
-              <div className="flex w-full items-center justify-center bg-black/20 p-2">
+            <div className="overflow-hidden rounded-xl sm:rounded-2xl border border-white/10 bg-[#2b2d31]/80 shadow-lg">
+              <div className="flex w-full items-center justify-center bg-black/20 p-1.5 sm:p-2">
                 <Image
                   src="/paso2.jpeg"
                   alt="Paso 2 - Crear o unirse a un servidor"
                   width={500}
                   height={900}
-                  className="h-auto max-h-[520px] w-full object-contain"
+                  className="h-auto max-h-[260px] sm:max-h-[520px] w-full object-contain"
                 />
               </div>
           
-              <div className="px-3 py-3 text-center">
-                <div className="text-xs font-black text-[#5865F2]">
+              <div className="px-1 py-2 sm:px-3 sm:py-3 text-center">
+                <div className="text-[9px] sm:text-xs font-black text-[#5865F2]">
                   PASO 2
                 </div>
-                <p className="mt-1 text-sm font-semibold text-white/80">
+                <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-sm font-semibold text-white/80">
                   Tocá Unirte
                 </p>
               </div>
             </div>
           
             {/* PASO 3 */}
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#2b2d31]/80 shadow-lg">
-              <div className="flex w-full items-center justify-center bg-black/20 p-2">
+            <div className="overflow-hidden rounded-xl sm:rounded-2xl border border-white/10 bg-[#2b2d31]/80 shadow-lg">
+              <div className="flex w-full items-center justify-center bg-black/20 p-1.5 sm:p-2">
                 <Image
                   src="/paso3.jpeg"
                   alt="Paso 3 - Pegar la invitación de Discord"
                   width={500}
                   height={900}
-                  className="h-auto max-h-[520px] w-full object-contain"
+                  className="h-auto max-h-[260px] sm:max-h-[520px] w-full object-contain"
                 />
               </div>
           
-              <div className="px-3 py-3 text-center">
-                <div className="text-xs font-black text-[#5865F2]">
+              <div className="px-1 py-2 sm:px-3 sm:py-3 text-center">
+                <div className="text-[9px] sm:text-xs font-black text-[#5865F2]">
                   PASO 3
                 </div>
-                <p className="mt-1 text-sm font-semibold text-white/80">
+                <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-sm font-semibold text-white/80">
                   Pegá la invitación
                 </p>
               </div>
