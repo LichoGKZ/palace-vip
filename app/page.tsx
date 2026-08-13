@@ -667,7 +667,7 @@ export default function PalaceVIPLanding() {
                   </div>
 
                   {/* CHANNELS */}
-                  <div className="space-y-2 overflow-hidden h-[500px]">
+                  <div className="space-y-2 overflow-y-auto h-[500px] pr-2">
                     {previewChannels.map((channel) => (
                       <button
                         key={channel}
