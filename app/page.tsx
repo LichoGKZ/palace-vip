@@ -322,20 +322,6 @@ const previewChannels = [
           <div className="flex items-center gap-4">
             <div className="relative">
               <div className="absolute inset-0 blur-xl bg-fuchsia-500/50 rounded-2xl" />
-
-              <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-violet-700 flex items-center justify-center font-black text-lg shadow-2xl">
-                P
-              </div>
-            </div>
-
-            <div>
-              <h1 className="font-black tracking-[0.2em] text-xl">
-                PALACE
-              </h1>
-
-              <p className="text-xs text-zinc-500">
-                comunidad privada argentina
-              </p>
             </div>
           </div>
 
