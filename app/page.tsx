@@ -661,9 +661,6 @@ export default function PalaceVIPLanding() {
                 <div className="w-full md:w-[320px] border-r md:border-r border-b md:border-b-0 border-white/10 bg-black/40 backdrop-blur-2xl p-4 md:p-5 overflow-y-auto max-h-[40vh] md:max-h-none">
                   {/* SERVER */}
                   <div className="flex items-center gap-4 mb-8">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-violet-700 flex items-center justify-center font-black text-xl shadow-[0_0_30px_rgba(217,70,239,0.4)]">
-                      P
-                    </div>
 
                     <div>
                     </div>
