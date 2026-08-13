@@ -1059,8 +1059,8 @@ const previewChannels = [
 )}
       {/* ACCESS MODAL */}
 {open && (
-  <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-xl p-4">
-    <div className="relative w-full max-w-4xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0a0a0a] shadow-[0_0_80px_rgba(217,70,239,0.25)]">
+  <div className="fixed inset-0 z-[999] overflow-y-auto overscroll-contain bg-black/80 backdrop-blur-xl p-4">
+    <div className="relative w-full max-w-4xl max-h-[calc(100dvh-2rem)] my-auto mx-auto overflow-y-auto overscroll-contain rounded-[2.5rem] border border-white/10 bg-[#0a0a0a] shadow-[0_0_80px_rgba(217,70,239,0.25)]">
 
       {/* GLOW */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.18),transparent_45%)]" />
