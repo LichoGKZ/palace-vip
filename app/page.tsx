@@ -217,7 +217,7 @@ export default function Page() {
           <div className="mt-8 flex w-full items-center gap-3 sm:mt-10">
             <div className="h-px flex-1 bg-white/10" />
             <span className="text-[11px] font-semibold uppercase tracking-wide text-white/40">
-              Si el botón no funciona
+              ¿Enlace caducado? Intenta esto ↓
             </span>
             <div className="h-px flex-1 bg-white/10" />
           </div>
