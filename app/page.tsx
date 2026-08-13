@@ -40,6 +40,10 @@ export default function PalaceVIPLanding() {
   const [previewTimer, setPreviewTimer] =
     useState<NodeJS.Timeout | null>(null)
 
+  // PAYMENT STATES
+  const [transferReady, setTransferReady] = useState(false)
+  const [aliasCopied, setAliasCopied] = useState(false)
+
   const sendLog = async (type: string, extra: any = {}) => {
     try {
       await fetch('/api/log', {
@@ -80,6 +84,38 @@ export default function PalaceVIPLanding() {
       window.removeEventListener('error', handleError)
     }
   }, [])
+
+  // Espera 7 segundos cada vez que se abre la ventana de pago
+  useEffect(() => {
+    if (!open || approved) {
+      setTransferReady(false)
+      return
+    }
+
+    setTransferReady(false)
+
+    const timer = setTimeout(() => {
+      setTransferReady(true)
+    }, 7000)
+
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [open, approved])
+
+  const copyAlias = async () => {
+    try {
+      await navigator.clipboard.writeText('licho380.macro')
+
+      setAliasCopied(true)
+
+      setTimeout(() => {
+        setAliasCopied(false)
+      }, 2000)
+    } catch (err) {
+      console.error('No se pudo copiar el alias', err)
+    }
+  }
 
   const handleAccess = async () => {
     // VALIDACIÓN DEL EMAIL
@@ -755,7 +791,11 @@ export default function PalaceVIPLanding() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.18),transparent_45%)]" />
 
               <button
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false)
+                  setTransferReady(false)
+                  setAliasCopied(false)
+                }}
                 className="absolute top-5 right-5 z-20 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 transition-all"
               >
                 ✕
@@ -830,47 +870,129 @@ export default function PalaceVIPLanding() {
                         </div>
                       </div>
 
-                      {/* ALIAS */}
-                      <div className="mt-8 rounded-2xl border border-white/10 bg-black/40 p-5">
-                        <div className="text-sm text-zinc-500">
-                          Alias de transferencia
-                        </div>
+                      {/* WAITING TRANSFER */}
+                      <div className="mt-8 flex items-center justify-center gap-3 rounded-2xl border border-fuchsia-500/20 bg-fuchsia-500/10 px-5 py-4">
+                        <span className="w-2.5 h-2.5 rounded-full bg-fuchsia-400 animate-pulse" />
 
-                        <div className="mt-2 text-2xl font-black tracking-wide">
-                          licho380.macro
-                        </div>
+                        <span className="text-fuchsia-200 font-semibold">
+                          Esperando transferencia...
+                        </span>
                       </div>
 
+                      {/* ALIAS */}
+                      <button
+                        type="button"
+                        onClick={copyAlias}
+                        className="mt-5 w-full text-left rounded-2xl border border-white/10 bg-black/40 p-5 hover:bg-white/[0.06] hover:border-fuchsia-500/30 transition-all active:scale-[0.99]"
+                      >
+                        <div className="flex items-center justify-between gap-4">
+                          <div>
+                            <div className="text-sm text-zinc-500">
+                              Alias de transferencia
+                            </div>
+
+                            <div className="mt-2 text-2xl font-black tracking-wide">
+                              licho380.macro
+                            </div>
+                          </div>
+
+                          <div className="shrink-0">
+                            {aliasCopied ? (
+                              <div className="flex items-center gap-2 text-green-400 text-sm font-bold">
+                                <svg
+                                  viewBox="0 0 24 24"
+                                  className="w-5 h-5"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                >
+                                  <path d="m5 12 4 4L19 6" />
+                                </svg>
+
+                                Copiado
+                              </div>
+                            ) : (
+                              <div className="flex items-center gap-2 text-zinc-400 text-sm">
+                                <svg
+                                  viewBox="0 0 24 24"
+                                  className="w-5 h-5"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="1.8"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                >
+                                  <rect
+                                    x="9"
+                                    y="9"
+                                    width="11"
+                                    height="11"
+                                    rx="2"
+                                  />
+                                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                </svg>
+
+                                Copiar
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </button>
+
                       <div className="mt-5 text-sm text-zinc-500 leading-relaxed">
-                        La transferencia se verifica automaticamente y el
-                        acceso es instantaneo.
+                        Realizá la transferencia de{' '}
+                        <span className="text-zinc-300 font-semibold">
+                          $4.800
+                        </span>{' '}
+                        al alias indicado. Una vez realizada, esperá unos
+                        segundos y presioná el botón para continuar.
                       </div>
                     </div>
 
-                    {/* BUTTON */}
-                    <button
-                      onClick={handleAccess}
-                      disabled={loading || !isEmailValid}
-                      className="group relative overflow-hidden mt-8 w-full rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-6 py-4 text-base md:px-10 md:py-6 md:text-xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.01] transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
-                    >
-                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {/* BUTTON AREA */}
+                    <div className="mt-8">
+                      {!transferReady ? (
+                        <div className="w-full rounded-[2rem] border border-white/10 bg-white/[0.03] px-6 py-5 text-center">
+                          <div className="flex items-center justify-center gap-3 text-zinc-400">
+                            <div className="w-5 h-5 border-2 border-zinc-500 border-t-transparent rounded-full animate-spin" />
 
-                      <span className="relative z-10 flex items-center justify-center">
-                        {loading ? (
-                          <>
-                            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-3" />
-                            Verificando acceso privado...
-                          </>
-                        ) : (
-                          <>
-                            Ya realicé la transferencia
-                            <span className="ml-3 group-hover:translate-x-1 transition-transform">
-                              →
+                            <span className="font-semibold">
+                              Esperando transferencia...
                             </span>
-                          </>
-                        )}
-                      </span>
-                    </button>
+                          </div>
+
+                          <p className="mt-2 text-xs text-zinc-600">
+                            El botón estará disponible en unos segundos.
+                          </p>
+                        </div>
+                      ) : (
+                        <button
+                          onClick={handleAccess}
+                          disabled={loading || !isEmailValid}
+                          className="group relative overflow-hidden w-full rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-6 py-4 text-base md:px-10 md:py-6 md:text-xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.01] transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+                        >
+                          <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                          <span className="relative z-10 flex items-center justify-center">
+                            {loading ? (
+                              <>
+                                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-3" />
+                                Verificando acceso privado...
+                              </>
+                            ) : (
+                              <>
+                                Ya realicé la transferencia
+                                <span className="ml-3 group-hover:translate-x-1 transition-transform">
+                                  →
+                                </span>
+                              </>
+                            )}
+                          </span>
+                        </button>
+                      )}
+                    </div>
 
                     {/* SECURITY */}
                     <div className="mt-6 flex flex-wrap gap-3 text-sm">
