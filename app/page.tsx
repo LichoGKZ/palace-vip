@@ -201,12 +201,8 @@ export default function Page() {
 
           <div className="mb-4 text-center">
             <h2 className="text-lg font-extrabold text-white">
-              ¿Cómo entrar?
-            </h2>
-
-            <p className="mt-1 text-sm text-white/50">
               Si el botón no funciona, seguí estos 3 pasos
-            </p>
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
