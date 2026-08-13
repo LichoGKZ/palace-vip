@@ -895,10 +895,19 @@ export default function PalaceVIPLanding() {
                             <div className="text-sm text-zinc-500">
                               Alias de transferencia
                             </div>
-
-                            <div className="mt-2 text-2xl font-black tracking-wide">
+                            <button
+                              type="button"
+                              onClick={async () => {
+                                try {
+                                  await navigator.clipboard.writeText('licho380.macro')
+                                } catch (err) {
+                                  console.error('No se pudo copiar el alias', err)
+                                }
+                              }}
+                              className="mt-2 text-2xl font-black tracking-wide text-left hover:text-fuchsia-300 transition-colors"
+                            >
                               licho380.macro
-                            </div>
+                            </button>
                           </div>
 
                           <div className="shrink-0">
