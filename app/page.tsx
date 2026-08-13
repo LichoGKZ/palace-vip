@@ -1269,10 +1269,6 @@ const previewChannels = [
                     </div>
                   </div>
 
-                  <div className="mt-3 h-16 flex items-center justify-center">
-                    {new_icon}
-                  </div>
-
                   <h5 className="mt-5 min-h-[28px] flex items-center justify-center font-black text-lg">
                     Entrá al Discord
                   </h5>
