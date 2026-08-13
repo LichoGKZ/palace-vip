@@ -581,12 +581,6 @@ export default function PalaceVIPLanding() {
               </button>
 
               <div className="relative z-10 flex flex-col md:flex-row h-full">
-                {/* SIDEBAR */}
-                <div className="w-full md:w-[320px] border-r md:border-r border-b md:border-b-0 border-white/10 bg-black/40 backdrop-blur-2xl p-4 md:p-5 overflow-y-auto max-h-[40vh] md:max-h-none">
-                  <div className="flex items-center gap-4 mb-8">
-                    <div></div>
-                  </div>
-                </div>
 
                 {/* CONTENT */}
                 <div className="flex-1 relative overflow-hidden min-h-[60vh] md:min-h-0">
