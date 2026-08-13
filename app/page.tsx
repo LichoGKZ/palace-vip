@@ -1243,8 +1243,7 @@ export default function PalaceVIPLanding() {
                         </svg>
 
                         El acceso al contenido VIP se habilita únicamente
-                        después de verificar tu pago (no demora mas de 5
-                        minutos).
+                        después de verificar tu pago (proceso automatico, dura menos de 2 minutos).
                       </div>
                     </div>
                   </div>
