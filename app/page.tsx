@@ -666,17 +666,7 @@ export default function PalaceVIPLanding() {
                     </div>
 
                     <div>
-                      <div className="font-black text-lg">PALACE VIP</div>
-
-                      <div className="text-xs text-zinc-500">
-                        servidor privado
-                      </div>
                     </div>
-                  </div>
-
-                  {/* CATEGORY */}
-                  <div className="text-xs uppercase tracking-[0.2em] text-zinc-600 mb-4">
-                    previews exclusivos
                   </div>
 
                   {/* CHANNELS */}
