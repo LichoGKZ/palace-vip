@@ -198,7 +198,7 @@ export default function Page() {
 
         {/* TUTORIAL */}
 
-        <div className="mt-8 w-full max-w-[650px]">
+        <div className="mt-8 w-full">
 
           <div className="mb-4 text-center">
             <h2 className="text-lg font-extrabold text-white">
@@ -274,8 +274,6 @@ export default function Page() {
               </div>
             </div>
           </div>
-            </div>
-</div>
         </div>
       </div>
     </main>
