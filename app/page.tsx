@@ -1140,10 +1140,6 @@ const previewChannels = [
                     pago único • acceso permanente
                   </div>
                 </div>
-
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-violet-700 flex items-center justify-center text-2xl font-black">
-                  P
-                </div>
               </div>
 
               {/* ALIAS */}
