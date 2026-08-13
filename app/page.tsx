@@ -654,17 +654,6 @@ export default function PalaceVIPLanding() {
             <div className="relative w-full max-w-4xl max-h-[calc(100dvh-2rem)] my-auto mx-auto overflow-y-auto overscroll-contain rounded-[2.5rem] border border-white/10 bg-[#0a0a0a] shadow-[0_0_80px_rgba(217,70,239,0.25)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.18),transparent_45%)]" />
 
-              <button
-                onClick={() => {
-                  setOpen(false)
-                  setTransferReady(false)
-                  setAliasCopied(false)
-                }}
-                className="absolute top-5 right-5 z-20 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 transition-all"
-              >
-                ✕
-              </button>
-
               <div className="relative z-10 p-8 md:p-10">
                 <div className="text-center">
                   <h2 className="mt-6 text-4xl md:text-5xl font-black leading-[0.95]">
