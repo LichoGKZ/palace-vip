@@ -391,7 +391,7 @@ const previewChannels = [
 
                   setPreviewTimer(timer)
                 }}
-
+              >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Ver contenido
                   <span className="group-hover:translate-x-1 transition-transform">
