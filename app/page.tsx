@@ -152,7 +152,8 @@ export default function Page() {
 
       {/* Contenido */}
 
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-5 py-10">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-5 py-10 sm:py-12">
+        <div className="flex w-full max-w-[650px] translate-y-6 flex-col items-center sm:translate-y-0">
 
         {/* BOTÓN PRINCIPAL */}
 
@@ -272,25 +273,11 @@ export default function Page() {
                 </p>
               </div>
             </div>
-          
           </div>
-
-
-
-          {/* INVITACIÓN DEBAJO DEL TUTORIAL */}
-
-          <button
-            type="button"
-            onClick={copiarInvitacion}
-            className="mx-auto mt-4 block rounded-lg px-3 py-1.5 font-mono text-xs text-white/40 transition-colors hover:text-white/70"
-          >
-            {copied ? '✓ Invitación copiada' : 'discord.gg/yGeXXUXu2w'}
-          </button>
-
+            </div>
+</div>
         </div>
-
       </div>
-
     </main>
   )
 }
