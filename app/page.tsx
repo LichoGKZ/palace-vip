@@ -984,7 +984,7 @@ export default function PalaceVIPLanding() {
                       ) : (
                         <button
                           onClick={handleAccess}
-                          disabled={loading || !isEmailValid}
+                          disabled={loading || !isTitularValid}
                           className="group relative overflow-hidden w-full rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-6 py-4 text-base md:px-10 md:py-6 md:text-xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.01] transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
                         >
                           <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
