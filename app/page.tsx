@@ -442,9 +442,9 @@ export default function PalaceVIPLanding() {
               </div>
 
               <h2 className="text-4xl md:text-6xl font-black leading-[1]">
-                No es una página random.
+                No es cualquier discord.
                 <br />
-                Es una comunidad privada viva.
+                Tiene todo el contenido de ARG.
               </h2>
             </div>
 
@@ -459,11 +459,6 @@ export default function PalaceVIPLanding() {
                   icon: '🚀',
                   title: 'Acceso inmediato',
                   text: 'Comprás una vez y entrás automáticamente al servidor VIP.',
-                },
-                {
-                  icon: '👑',
-                  title: 'Comunidad real',
-                  text: 'Miles de miembros activos compartiendo contenido diariamente.',
                 },
               ].map((item) => (
                 <div
