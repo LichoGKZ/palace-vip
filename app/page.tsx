@@ -688,26 +688,6 @@ export default function PalaceVIPLanding() {
                                 fill
                                 className="object-cover"
                               />
-
-                              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                <div className="font-black text-xl flex items-center gap-2">
-                                  <TextImage
-                                    text="Contenido"
-                                    fontSize={20}
-                                    color="#ffffff"
-                                  />
-
-                                  <TextImage
-                                    text="VIP"
-                                    fontSize={20}
-                                    color="#ffffff"
-                                  />
-                                </div>
-
-                                <div className="text-sm text-zinc-300 mt-2">
-                                  desbloqueá acceso completo
-                                </div>
-                              </div>
                             </div>
                           ))}
                         </div>
