@@ -366,25 +366,6 @@ export default function PalaceVIPLanding() {
           <div className="absolute bottom-[-30%] right-[-10%] w-[800px] h-[800px] bg-violet-700/20 blur-[200px] rounded-full" />
         </div>
 
-        {/* TOP BAR */}
-        <header className="relative z-20 border-b border-white/10 backdrop-blur-2xl bg-black/30">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="relative">
-                <div className="absolute inset-0 blur-xl bg-fuchsia-500/50 rounded-2xl" />
-              </div>
-            </div>
-
-            <div className="hidden lg:flex items-center gap-3">
-              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-
-              <div className="text-sm text-zinc-400">
-                237 miembros online ahora
-              </div>
-            </div>
-          </div>
-        </header>
-
         {/* HERO */}
         <section className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
