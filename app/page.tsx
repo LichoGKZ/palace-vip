@@ -215,6 +215,11 @@ export default function PalaceVIPLanding() {
     '/preview/8.jpeg',
     '/preview/9.jpeg',
     '/preview/10.jpeg',
+    '/preview/11.jpeg',
+    '/preview/12.jpeg',
+    '/preview/13.jpeg',
+    '/preview/14.jpeg',
+    '/preview/15.jpeg',
   ]
 
   const testimonials = [
