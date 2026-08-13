@@ -875,22 +875,23 @@ const previewChannels = [
             </div>
           ) : (
             <div className="h-full flex flex-col">
-
               {/* TOP */}
               <div className="border-b border-white/10 px-8 py-5 bg-black/30 backdrop-blur-xl flex items-center justify-between">
-
+              
                 <div>
                   <div className="text-2xl font-black">
                     {selectedChannel}
                   </div>
                 </div>
-
+              
                 <div className="flex items-center gap-3 text-sm text-zinc-500">
+                </div>
+              
               </div>
-
+              
               {/* MAIN */}
               <div className="flex-1 p-8 overflow-y-auto">
-
+  
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
                 {previewImages.map((img, i) => (
