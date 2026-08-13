@@ -709,46 +709,45 @@ const previewChannels = [
         </div>
 
         {/* CONTENT */}
-      
         <div className="flex-1 relative overflow-hidden min-h-[60vh] md:min-h-0">
-
+        
           {previewLocked ? (
             <div className="h-full flex flex-col items-center justify-center text-center px-10">
-
+        
               <h2 className="mt-6 md:mt-10 text-2xl md:text-5xl font-black leading-[1.05] px-2">
                 Este no es un discord mas...
                 <br />
                 Esto es mejor que OnlyFans.
               </h2>
-
+        
               <p className="mt-4 md:mt-6 text-sm md:text-xl text-zinc-300 max-w-2xl leading-relaxed px-2">
                 Mas de 200 artistas argentinas, mas de 17mil archivos. Todo en un solo lugar.
               </p>
-
+        
               <div className="mt-8 flex flex-col items-center gap-3 text-sm text-zinc-400">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                   18mil Usuarios en discord
                 </div>
               </div>
-
+        
               <button
                 onClick={() => {
                   setPreviewOpen(false)
-
+        
                   if (window.fbq) {
                     window.fbq('track', 'InitiateCheckout', {
                       value: 4800,
                       currency: 'ARS',
                     })
                   }
-
+        
                   setOpen(true)
                 }}
                 className="mt-8 md:mt-10 w-full md:w-auto group relative overflow-hidden rounded-[2.2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-14 py-6 text-2xl font-black shadow-[0_0_90px_rgba(217,70,239,0.4)] hover:scale-[1.03] transition-all duration-300"
               >
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-
+        
                 <span className="relative z-10 flex items-center justify-center">
                   Acceder
                   <span className="ml-3 group-hover:translate-x-1 transition-transform">
@@ -756,114 +755,139 @@ const previewChannels = [
                   </span>
                 </span>
               </button>
-
+        
               <p className="mt-5 text-xs text-zinc-500 max-w-md">
                 Acceso inmediato luego del pago. Cancelable en cualquier momento.
               </p>
-
+        
             </div>
           ) : (
             <div className="h-full flex flex-col">
+        
               {/* TOP */}
               <div className="border-b border-white/10 px-8 py-5 bg-black/30 backdrop-blur-xl flex items-center justify-between">
-              
                 <div>
                   <div className="text-2xl font-black">
                     {selectedChannel}
                   </div>
                 </div>
-              
-                <div className="flex items-center gap-3 text-sm text-zinc-500">
-                </div>
-              
+        
+                <div className="flex items-center gap-3 text-sm text-zinc-500" />
               </div>
-              
+        
               {/* MAIN */}
               <div className="flex-1 p-8 overflow-y-auto">
-  
+        
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-
-                {previewImages.map((img, i) => (
-                  <div
-                    key={i}
-                    className="group relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10"
-                  >
-
-                    <Image
-                      src={img}
-                      alt={`Preview ${i}`}
-                      fill
-                      className="object-cover"
-                    />
-
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-
-                      <div className="font-black text-xl flex items-center gap-2">
-                        <TextImage text="Contenido" fontSize={20} color="#ffffff" /> <TextImage text="VIP" fontSize={20} color="#ffffff" />
+        
+                  {previewImages.map((img, i) => (
+                    <div
+                      key={i}
+                      className="group relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10"
+                    >
+                      <Image
+                        src={img}
+                        alt={`Preview ${i}`}
+                        fill
+                        className="object-cover"
+                      />
+        
+                      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        
+                        <div className="font-black text-xl flex items-center gap-2">
+                          <TextImage
+                            text="Contenido"
+                            fontSize={20}
+                            color="#ffffff"
+                          />
+        
+                          <TextImage
+                            text="VIP"
+                            fontSize={20}
+                            color="#ffffff"
+                          />
+                        </div>
+        
+                        <div className="text-sm text-zinc-300 mt-2">
+                          desbloqueá acceso completo
+                        </div>
+        
                       </div>
-
-                      <div className="text-sm text-zinc-300 mt-2">
-                        desbloqueá acceso completo
-                      </div>
-
                     </div>
-
-                  </div>
-                ))}
-
-              </div>
-
+                  ))}
+        
+                </div>
+        
                 {/* CTA */}
                 <div className="mt-12 rounded-[2.5rem] border border-fuchsia-500/20 bg-gradient-to-b from-fuchsia-500/10 to-black p-10 text-center shadow-[0_0_80px_rgba(217,70,239,0.12)]">
-
+        
                   <div className="inline-flex items-center gap-3 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/10 px-5 py-3 text-sm text-fuchsia-200">
                     🔥 acceso limitado hoy
                   </div>
-
+        
                   <h3 className="mt-7 text-5xl font-black leading-[0.95]">
                     Para ver el contenido completo
                     <br />
                     necesitás acceso VIP.
                   </h3>
-
+        
                   <p className="mt-5 text-zinc-400 text-lg max-w-2xl mx-auto">
-                    Entrá ahora al servidor privado y desbloqueá todos los canales <TextImage text="premium" fontSize={18} color="#a1a1aa" />, <TextImage text="filtraciones" fontSize={18} color="#a1a1aa" /> y <TextImage text="contenido" fontSize={18} color="#a1a1aa" /> exclusivo.
+                    Entrá ahora al servidor privado y desbloqueá todos los canales{" "}
+                    <TextImage
+                      text="premium"
+                      fontSize={18}
+                      color="#a1a1aa"
+                    />
+                    ,{" "}
+                    <TextImage
+                      text="filtraciones"
+                      fontSize={18}
+                      color="#a1a1aa"
+                    />{" "}
+                    y{" "}
+                    <TextImage
+                      text="contenido"
+                      fontSize={18}
+                      color="#a1a1aa"
+                    />{" "}
+                    exclusivo.
                   </p>
-
+        
                   <button
                     onClick={() => {
                       setPreviewOpen(false)
-
+        
                       if (window.fbq) {
                         window.fbq('track', 'InitiateCheckout', {
                           value: 4800,
                           currency: 'ARS',
                         })
                       }
-
+        
                       setOpen(true)
                     }}
                     className="mt-10 group relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-12 py-6 text-2xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.02] transition-all duration-300"
                   >
-
+        
                     <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-
+        
                     <span className="relative z-10 flex items-center justify-center">
                       Desbloquear acceso ahora
+        
                       <span className="ml-3 group-hover:translate-x-1 transition-transform">
                         →
                       </span>
                     </span>
-
+        
                   </button>
-
+        
                 </div>
-
+        
               </div>
-
+        
             </div>
           )}
-
+        
         </div>
 
       </div>
