@@ -657,67 +657,6 @@ export default function PalaceVIPLanding() {
                             </div>
                           ))}
                         </div>
-
-                        <div className="mt-12 rounded-[2.5rem] border border-fuchsia-500/20 bg-gradient-to-b from-fuchsia-500/10 to-black p-10 text-center shadow-[0_0_80px_rgba(217,70,239,0.12)]">
-                          <div className="inline-flex items-center gap-3 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/10 px-5 py-3 text-sm text-fuchsia-200">
-                            🔥 acceso limitado hoy
-                          </div>
-
-                          <h3 className="mt-7 text-5xl font-black leading-[0.95]">
-                            Para ver el contenido completo
-                            <br />
-                            necesitás acceso VIP.
-                          </h3>
-
-                          <p className="mt-5 text-zinc-400 text-lg max-w-2xl mx-auto">
-                            Entrá ahora al servidor privado y desbloqueá todos
-                            los canales{' '}
-                            <TextImage
-                              text="premium"
-                              fontSize={18}
-                              color="#a1a1aa"
-                            />
-                            ,{' '}
-                            <TextImage
-                              text="filtraciones"
-                              fontSize={18}
-                              color="#a1a1aa"
-                            />{' '}
-                            y{' '}
-                            <TextImage
-                              text="contenido"
-                              fontSize={18}
-                              color="#a1a1aa"
-                            />{' '}
-                            exclusivo.
-                          </p>
-
-                          <button
-                            onClick={() => {
-                              setPreviewOpen(false)
-
-                              if (window.fbq) {
-                                window.fbq('track', 'InitiateCheckout', {
-                                  value: 4800,
-                                  currency: 'ARS',
-                                })
-                              }
-
-                              setOpen(true)
-                            }}
-                            className="mt-10 group relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-12 py-6 text-2xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.02] transition-all duration-300"
-                          >
-                            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                            <span className="relative z-10 flex items-center justify-center">
-                              Desbloquear acceso ahora
-
-                              <span className="ml-3 group-hover:translate-x-1 transition-transform">
-                                →
-                              </span>
-                            </span>
-                          </button>
-                        </div>
                       </div>
                     </div>
                   )}
