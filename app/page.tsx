@@ -69,31 +69,31 @@ async function sendLog(type: 'visita' | 'discord_click') {
     // No bloqueamos la página si falla el log
   }
 }
-
+ 
 export default function Page() {
   const [loading, setLoading] = useState(false)
   const [copied, setCopied] = useState(false)
-
+ 
   useEffect(() => {
     sendLog('visita')
   }, [])
-
+ 
   const entrarDiscord = async () => {
     if (loading) return
-
+ 
     setLoading(true)
-
+ 
     await sendLog('discord_click')
-
+ 
     window.location.href = DISCORD_INVITE
   }
-
+ 
   const copiarInvitacion = async () => {
     try {
       await navigator.clipboard.writeText(DISCORD_INVITE)
-
+ 
       setCopied(true)
-
+ 
       setTimeout(() => {
         setCopied(false)
       }, 2500)
@@ -103,15 +103,15 @@ export default function Page() {
       textarea.value = DISCORD_INVITE
       textarea.style.position = 'fixed'
       textarea.style.opacity = '0'
-
+ 
       document.body.appendChild(textarea)
       textarea.focus()
       textarea.select()
-
+ 
       try {
         document.execCommand('copy')
         setCopied(true)
-
+ 
         setTimeout(() => {
           setCopied(false)
         }, 2500)
@@ -120,12 +120,12 @@ export default function Page() {
       }
     }
   }
-
+ 
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-[#1e1f22] text-white">
-
+ 
       {/* Fondo */}
-
+ 
       <div className="absolute inset-0 flex flex-col justify-center gap-3 opacity-30">
         {Array.from({ length: 9 }).map((_, row) => (
           <div key={row} className="flex w-max gap-2">
@@ -140,18 +140,18 @@ export default function Page() {
           </div>
         ))}
       </div>
-
+ 
       {/* Oscurecer fondo */}
-
+ 
       <div className="absolute inset-0 bg-gradient-to-b from-[#1e1f22]/80 via-[#1e1f22]/90 to-[#1e1f22]" />
-
+ 
       {/* Contenido */}
-
+ 
       <div className="relative z-10 flex min-h-screen flex-col items-center px-4 py-8 sm:justify-center sm:py-12">
         <div className="flex w-full max-w-[440px] flex-col items-center">
-
+ 
           {/* ENCABEZADO */}
-
+ 
           <div className="mb-6 flex flex-col items-center text-center sm:mb-8">
             <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#5865F2]/15 ring-1 ring-[#5865F2]/30 sm:h-16 sm:w-16">
               <svg viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7 text-[#5865F2] sm:h-8 sm:w-8">
@@ -162,12 +162,12 @@ export default function Page() {
               Unite a nuestro Discord
             </h1>
             <p className="mt-1 text-[14px] text-white/60 sm:text-[15px]">
-              Todos los OnlyFans en un solo lugar
+              Comunidad de Albion Online
             </p>
           </div>
-
+ 
           {/* BOTÓN PRINCIPAL */}
-
+ 
           <button
             type="button"
             onClick={entrarDiscord}
@@ -183,9 +183,9 @@ export default function Page() {
               </>
             )}
           </button>
-
+ 
           {/* ADVERTENCIA / COPIAR INVITACIÓN */}
-
+ 
           <button
             type="button"
             onClick={copiarInvitacion}
@@ -211,9 +211,9 @@ export default function Page() {
               )}
             </div>
           </button>
-
+ 
           {/* SEPARADOR */}
-
+ 
           <div className="mt-8 flex w-full items-center gap-3 sm:mt-10">
             <div className="h-px flex-1 bg-white/10" />
             <span className="text-[11px] font-semibold uppercase tracking-wide text-white/40">
@@ -221,9 +221,9 @@ export default function Page() {
             </span>
             <div className="h-px flex-1 bg-white/10" />
           </div>
-
+ 
           {/* TUTORIAL */}
-
+ 
           <div className="mt-5 flex w-full flex-col gap-3">
             {[
               { src: '/paso1.jpeg', alt: 'Paso 1 - Añadir un servidor en Discord', num: 1, titulo: 'Tocá el botón +', desc: 'En la barra lateral izquierda de Discord' },
@@ -234,13 +234,13 @@ export default function Page() {
                 key={paso.num}
                 className="flex items-center gap-3 overflow-hidden rounded-xl border border-white/10 bg-[#2b2d31]/70 p-2.5 sm:gap-4 sm:p-3"
               >
-                <div className="relative shrink-0 overflow-hidden rounded-lg bg-black/20">
+                <div className="relative flex h-[100px] w-[76px] shrink-0 items-center justify-center overflow-hidden rounded-lg bg-black/25 sm:h-[116px] sm:w-[88px]">
                   <Image
                     src={paso.src}
                     alt={paso.alt}
                     width={200}
                     height={360}
-                    className="h-[86px] w-[64px] object-cover object-top sm:h-[100px] sm:w-[74px]"
+                    className="h-full w-full object-contain"
                   />
                   <div className="absolute left-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#5865F2] text-[11px] font-black text-white">
                     {paso.num}
