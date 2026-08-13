@@ -1077,9 +1077,7 @@ const previewChannels = [
 
         {/* HEADER */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-3 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/10 px-5 py-3 text-sm text-fuchsia-200">
-            🔥 acceso privado habilitado
-          </div>
+
 
           <h2 className="mt-6 text-4xl md:text-5xl font-black leading-[0.95]">
             Acceder al Discord
