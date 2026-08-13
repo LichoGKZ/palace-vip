@@ -569,22 +569,6 @@ export default function PalaceVIPLanding() {
           <div className="fixed inset-0 z-[998] bg-black/90 backdrop-blur-2xl flex items-center justify-center p-4">
             <div className="relative w-full max-w-6xl h-[85vh] rounded-[2.5rem] overflow-hidden border border-white/10 bg-[#0a0a0a] shadow-[0_0_120px_rgba(217,70,239,0.25)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.18),transparent_45%)]" />
-
-              <button
-                onClick={() => {
-                  setPreviewOpen(false)
-                  setPreviewLocked(false)
-
-                  if (previewTimer) {
-                    clearTimeout(previewTimer)
-                    setPreviewTimer(null)
-                  }
-                }}
-                className="absolute top-5 right-5 z-50 w-11 h-11 rounded-full bg-white/5 hover:bg-white/10 transition-all"
-              >
-                ✕
-              </button>
-
               <div className="relative z-10 flex flex-col md:flex-row h-full">
 
                 {/* CONTENT */}
