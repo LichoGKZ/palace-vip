@@ -813,7 +813,7 @@ export default function PalaceVIPLanding() {
                       <div className="flex items-center justify-between gap-4 flex-wrap">
                         <div>
                           <div className="text-sm text-zinc-500">
-                            Acceso VIP completo
+                            Acceso al Discord
                           </div>
 
                           <div className="text-5xl font-black mt-2">
@@ -821,67 +821,9 @@ export default function PalaceVIPLanding() {
                           </div>
 
                           <div className="text-fuchsia-300 text-sm mt-1">
-                            pago único • acceso permanente
+                            Pago único • Acceso permanente
                           </div>
                         </div>
-                      </div>
-                    {/* TITULAR */}
-                    <div className="mt-8 rounded-[2rem] border border-white/10 bg-white/[0.025] p-6">
-                      <label className="text-sm text-zinc-400 block mb-2">
-                        Nombre del titular de la cuenta
-                      </label>
-                    
-                      <p className="text-xs text-zinc-500 mb-4">
-                        ¿A nombre de quién has transferido?
-                      </p>
-                    
-                      <input
-                        type="text"
-                        placeholder="Nombre y apellido"
-                        value={titular}
-                        onChange={(e) => {
-                          const value = e.target.value
-                    
-                          // Solo letras, espacios y caracteres habituales de nombres
-                          const cleaned = value.replace(
-                            /[^a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]/g,
-                            ''
-                          )
-                    
-                          setTitular(cleaned)
-                    
-                          if (
-                            window.fbq &&
-                            cleaned.trim().split(/\s+/).length >= 2
-                          ) {
-                            window.fbq('track', 'Lead', {
-                              content_name:
-                                'PALACE ' +
-                                String.fromCharCode(86, 73, 80),
-                            })
-                          }
-                        }}
-                        className={`w-full rounded-2xl border bg-white/[0.04] px-5 py-4 outline-none transition-all ${
-                          titular.length > 0 && !isTitularValid
-                            ? 'border-red-500/50 focus:border-red-500/70'
-                            : 'border-white/10 focus:border-fuchsia-500/40'
-                        }`}
-                      />
-                    
-                      {titular.length > 0 && !isTitularValid && (
-                        <p className="mt-2 text-sm text-red-400">
-                          Ingresá nombre y apellido.
-                        </p>
-                      )}
-                    </div>
-
-                      {/* WAITING TRANSFER */}
-                      <div className="mt-8 flex items-center justify-center gap-3 rounded-2xl border border-fuchsia-500/20 bg-fuchsia-500/10 px-5 py-4">
-                        <span className="w-2.5 h-2.5 rounded-full bg-fuchsia-400 animate-pulse" />
-
-                        <span className="text-fuchsia-200 font-semibold">
-                          Esperando transferencia...
-                        </span>
                       </div>
 
                       {/* ALIAS */}
@@ -964,7 +906,66 @@ export default function PalaceVIPLanding() {
                         segundos y presioná el botón para continuar.
                       </div>
                     </div>
+                    {/* TITULAR */}
+                    <div className="mt-8 rounded-[2rem] border border-white/10 bg-white/[0.025] p-6">
+                      <label className="text-sm text-zinc-400 block mb-2">
+                        Nombre del titular de la cuenta
+                      </label>
+                    
+                      <p className="text-xs text-zinc-500 mb-4">
+                        ¿A nombre de quién has transferido?
+                      </p>
+                    
+                      <input
+                        type="text"
+                        placeholder="Nombre y apellido"
+                        value={titular}
+                        onChange={(e) => {
+                          const value = e.target.value
+                    
+                          // Solo letras, espacios y caracteres habituales de nombres
+                          const cleaned = value.replace(
+                            /[^a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]/g,
+                            ''
+                          )
+                    
+                          setTitular(cleaned)
+                    
+                          if (
+                            window.fbq &&
+                            cleaned.trim().split(/\s+/).length >= 2
+                          ) {
+                            window.fbq('track', 'Lead', {
+                              content_name:
+                                'PALACE ' +
+                                String.fromCharCode(86, 73, 80),
+                            })
+                          }
+                        }}
+                        className={`w-full rounded-2xl border bg-white/[0.04] px-5 py-4 outline-none transition-all ${
+                          titular.length > 0 && !isTitularValid
+                            ? 'border-red-500/50 focus:border-red-500/70'
+                            : 'border-white/10 focus:border-fuchsia-500/40'
+                        }`}
+                      />
+                    
+                      {titular.length > 0 && !isTitularValid && (
+                        <p className="mt-2 text-sm text-red-400">
+                          Ingresá nombre y apellido.
+                        </p>
+                      )}
+                    </div>
 
+
+                    {/* WAITING TRANSFER */}
+                     <div className="mt-8 flex items-center justify-center gap-3 rounded-2xl border border-fuchsia-500/20 bg-fuchsia-500/10 px-5 py-4">
+                       <span className="w-2.5 h-2.5 rounded-full bg-fuchsia-400 animate-pulse" />
+
+                       <span className="text-fuchsia-200 font-semibold">
+                         Esperando transferencia...
+                      </span>
+                    </div>
+                    
                     {/* BUTTON AREA */}
                     <div className="mt-8">
                       {!transferReady ? (
