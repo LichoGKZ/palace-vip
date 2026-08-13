@@ -336,21 +336,6 @@ const previewChannels = [
         </div>
       </header>
 
-      {/* LIVE TICKER */}
-      <div className="relative z-10 border-b border-white/5 overflow-hidden bg-white/[0.03]">
-        <div className="flex whitespace-nowrap animate-[ticker_25s_linear_infinite] py-3">
-          {[...fakeActivity, ...fakeActivity].map((item, i) => (
-            <div
-              key={i}
-              className="mx-8 text-sm text-zinc-400 flex items-center gap-3"
-            >
-              <div className="w-1.5 h-1.5 rounded-full bg-fuchsia-400" />
-              {item}
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* HERO */}
       <section className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -377,24 +362,6 @@ const previewChannels = [
               Accedé a <TextImage text="filtraciones" fontSize={20} color="#d4d4d8" /> exclusivas, <TextImage text="contenido" fontSize={20} color="#d4d4d8" /> <TextImage text="premium" fontSize={20} color="#d4d4d8" />,
               actualizaciones diarias y una comunidad activa 24/7.
             </p>
-
-            {/* SOCIAL STATS */}
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-6">
-                <div className="text-4xl font-black">18K+</div>
-                <div className="text-sm text-zinc-500 mt-2">Miembros</div>
-              </div>
-
-              <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-6">
-                <div className="text-4xl font-black">80GB+</div>
-                <div className="text-sm text-zinc-500 mt-2"><TextImage text="Contenido" fontSize={14} color="#71717a" /></div>
-              </div>
-
-              <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-6">
-                <div className="text-4xl font-black">24/7</div>
-                <div className="text-sm text-zinc-500 mt-2">Actividad</div>
-              </div>
-            </div>
 
             {/* CTA */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
