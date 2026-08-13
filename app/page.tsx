@@ -425,7 +425,81 @@ export default function PalaceVIPLanding() {
                 />
                 , actualizaciones diarias y una comunidad activa 24/7.
               </p>
+              {/* COMPARATIVA */}
+              <div className="mt-10 max-w-2xl">
 
+              
+                <div className="grid grid-cols-3 gap-2 md:gap-4 items-stretch">
+              
+                  {/* CLASH ROYALE */}
+                  <div className="relative rounded-2xl md:rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-4 md:p-5 text-center opacity-60">
+                    <div className="text-xs md:text-sm font-black text-zinc-500 uppercase tracking-wider">
+                      OnlyFans
+                    </div>
+              
+                    <div className="mt-4 mx-auto w-10 h-10 md:w-12 md:h-12 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <span className="text-red-500 text-2xl md:text-3xl font-black">
+                        ×
+                      </span>
+                    </div>
+                  </div>
+              
+                  {/* GTA */}
+                  <div className="relative rounded-2xl md:rounded-[1.5rem] border border-white/10 bg-white/[0.025] p-4 md:p-5 text-center opacity-60">
+                    <div className="text-xs md:text-sm font-black text-zinc-500 uppercase tracking-wider">
+                      Erome
+                    </div>
+              
+                    <div className="mt-4 mx-auto w-10 h-10 md:w-12 md:h-12 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <span className="text-red-500 text-2xl md:text-3xl font-black">
+                        ×
+                      </span>
+                    </div>
+                  </div>
+                  {/* PALACE */}
+                  <div className="relative rounded-2xl md:rounded-[1.5rem] border border-fuchsia-500/40 bg-gradient-to-b from-fuchsia-500/10 to-violet-600/5 p-4 md:p-5 text-center shadow-[0_0_35px_rgba(217,70,239,0.12)]">
+              
+                    <div className="text-xs md:text-sm font-black text-white uppercase tracking-wider">
+                      Nuestro Discord
+                    </div>
+              
+                    <div className="mt-4 mx-auto w-10 h-10 md:w-12 md:h-12 rounded-full bg-fuchsia-500/15 border border-fuchsia-400/40 flex items-center justify-center shadow-[0_0_25px_rgba(217,70,239,0.3)]">
+                      <span className="text-fuchsia-300 text-2xl md:text-3xl font-black">
+                        ✓
+                      </span>
+                    </div>
+              
+                    <p className="mt-3 text-[10px] md:text-xs text-fuchsia-200 font-bold">
+                      Todo en un lugar
+                    </p>
+                  </div>
+              
+                </div>
+              
+                {/* FLECHA HACIA EL CTA */}
+                <div className="mt-6 flex flex-col items-center text-center">
+                  <span className="text-xs text-zinc-500 font-medium">
+                    Mirá lo que tenemos para vos
+                  </span>
+              
+                  <div className="mt-2 animate-bounce">
+                    <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-fuchsia-400"
+                    >
+                      <path d="M12 5v14" />
+                      <path d="m19 12-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => {
