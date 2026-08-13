@@ -592,9 +592,9 @@ export default function PalaceVIPLanding() {
                   {previewLocked ? (
                     <div className="h-full flex flex-col items-center justify-center text-center px-10">
                       <h2 className="mt-6 md:mt-10 text-2xl md:text-5xl font-black leading-[1.05] px-2">
-                        Este no es un discord mas...
+                        ¿Viste eso?
                         <br />
-                        Esto es mejor que OnlyFans.
+                        Imaginate lo que hay en el servidor...
                       </h2>
 
                       <p className="mt-4 md:mt-6 text-sm md:text-xl text-zinc-300 max-w-2xl leading-relaxed px-2">
@@ -627,7 +627,7 @@ export default function PalaceVIPLanding() {
                         <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
                         <span className="relative z-10 flex items-center justify-center">
-                          Acceder
+                          Entrar
                           <span className="ml-3 group-hover:translate-x-1 transition-transform">
                             →
                           </span>
