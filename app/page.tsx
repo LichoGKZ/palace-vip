@@ -625,11 +625,6 @@ export default function PalaceVIPLanding() {
                           </span>
                         </span>
                       </button>
-
-                      <p className="mt-5 text-xs text-zinc-500 max-w-md">
-                        Acceso inmediato luego del pago. Cancelable en
-                        cualquier momento.
-                      </p>
                     </div>
                   ) : (
                     <div className="h-full flex flex-col">
