@@ -323,20 +323,9 @@ const previewChannels = [
             <div className="relative">
               <div className="absolute inset-0 blur-xl bg-fuchsia-500/50 rounded-2xl" />
 
-              <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-violet-700 flex items-center justify-center font-black text-lg shadow-2xl">
-                P
-              </div>
             </div>
 
             <div>
-              <h1 className="font-black tracking-[0.2em] text-xl">
-                PALACE
-              </h1>
-
-              <p className="text-xs text-zinc-500">
-                comunidad privada argentina
-              </p>
-            </div>
           </div>
 
           {/* LIVE ACTIVITY */}
@@ -372,9 +361,6 @@ const previewChannels = [
           <div>
             {/* BADGE */}
             <div className="inline-flex items-center gap-3 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/10 backdrop-blur-xl px-5 py-3 text-sm text-fuchsia-200 mb-8 shadow-lg shadow-fuchsia-500/10">
-              <div className="w-2 h-2 rounded-full bg-fuchsia-400 animate-pulse" />
-              Todas las famosas de Argentina
-            </div>
 
             {/* TITLE */}
             <h1 className="text-3xl leading-tight md:text-6xl font-black tracking-tight">
@@ -392,23 +378,6 @@ const previewChannels = [
               actualizaciones diarias y una comunidad activa 24/7.
             </p>
 
-            {/* SOCIAL STATS */}
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-6">
-                <div className="text-4xl font-black">18K+</div>
-                <div className="text-sm text-zinc-500 mt-2">Miembros</div>
-              </div>
-
-              <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-6">
-                <div className="text-4xl font-black">80GB+</div>
-                <div className="text-sm text-zinc-500 mt-2"><TextImage text="Contenido" fontSize={14} color="#71717a" /></div>
-              </div>
-
-              <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-6">
-                <div className="text-4xl font-black">24/7</div>
-                <div className="text-sm text-zinc-500 mt-2">Actividad</div>
-              </div>
-            </div>
 
             {/* CTA */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -418,10 +387,6 @@ const previewChannels = [
               >
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                <span className="relative z-10 flex items-center justify-center">
-                  Obtener <TextImage text="acceso" fontSize={18} color="#ffffff" /> ahora
-                  <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
-                </span>
               </a>
 
               <button
@@ -451,7 +416,7 @@ const previewChannels = [
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.25),transparent_60%)]" />
 
                 <span className="relative z-10 flex items-center justify-center gap-3">
-                  Ver preview
+                  Ver contenido
                   <span className="group-hover:translate-x-1 transition-transform">
                     →
                   </span>
@@ -1269,9 +1234,6 @@ const previewChannels = [
                     </div>
                   </div>
 
-                  <div className="mt-3 h-16 flex items-center justify-center">
-                    {new_icon}
-                  </div>
 
                   <h5 className="mt-5 min-h-[28px] flex items-center justify-center font-black text-lg">
                     Entrá al Discord
