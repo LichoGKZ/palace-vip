@@ -370,11 +370,6 @@ const previewChannels = [
                 className="group relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-fuchsia-500 to-violet-600 px-6 py-4 text-base md:px-10 md:py-6 md:text-xl font-black shadow-[0_0_60px_rgba(217,70,239,0.35)] hover:scale-[1.02] transition-all duration-300 text-center"
               >
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                <span className="relative z-10 flex items-center justify-center">
-                  Obtener <TextImage text="acceso" fontSize={18} color="#ffffff" /> ahora
-                  <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
-                </span>
               </a>
 
               <button
@@ -404,7 +399,7 @@ const previewChannels = [
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.25),transparent_60%)]" />
 
                 <span className="relative z-10 flex items-center justify-center gap-3">
-                  Ver preview
+                  Ver contenido
                   <span className="group-hover:translate-x-1 transition-transform">
                     →
                   </span>
