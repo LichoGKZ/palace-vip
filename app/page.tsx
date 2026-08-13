@@ -1068,46 +1068,64 @@ export default function PalaceVIPLanding() {
                         .
                       </p>
                     </div>
-
                     {/* STEPS */}
                     <div className="mt-10 rounded-[2rem] border border-white/10 bg-white/[0.025] p-6 md:p-8">
                       <div className="flex items-center gap-4 mb-8">
                         <div className="h-px flex-1 bg-fuchsia-500/20" />
-
+                    
                         <div className="text-fuchsia-300 font-bold">
                           ¿Qué sigue?
                         </div>
-
+                    
                         <div className="h-px flex-1 bg-fuchsia-500/20" />
                       </div>
-
+                    
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    
                         {/* STEP 1 */}
                         <div className="relative text-center min-w-0">
+                          {/* NUMERO */}
                           <div className="h-7 flex items-center justify-center">
                             <div className="w-7 h-7 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white text-xs font-black flex items-center justify-center shadow-lg">
                               1
                             </div>
                           </div>
-
+                    
+                          {/* ICONO DISCORD */}
+                          <div className="mt-3 h-16 flex items-center justify-center">
+                            <div className="w-16 h-16 rounded-full bg-[#5865F2]/10 border border-[#5865F2]/30 flex items-center justify-center shadow-[0_0_25px_rgba(88,101,242,0.15)]">
+                              <svg
+                                viewBox="0 0 24 24"
+                                className="w-9 h-9 text-[#5865F2]"
+                                fill="currentColor"
+                                aria-hidden="true"
+                              >
+                                <path d="M19.54 0c1.5 0 2.72 1.22 2.72 2.72v18.56c0 1.5-1.22 2.72-2.72 2.72H4.46c-1.5 0-2.72-1.22-2.72-2.72V2.72C1.74 1.22 2.96 0 4.46 0h15.08ZM8.52 6.38a7.74 7.74 0 0 0-2.07 2.14c-.03.05-.02.12.03.15.2.13.4.25.6.36-.34.25-.66.53-.95.84-.04.04-.04.1-.01.15 1.48 2.2 3.67 3.56 6.88 3.56s5.4-1.36 6.88-3.56c.03-.05.03-.11-.01-.15a9.3 9.3 0 0 0-.95-.84c.2-.11.4-.23.6-.36.05-.03.06-.1.03-.15a7.74 7.74 0 0 0-2.07-2.14.13.13 0 0 0-.14-.01c-.42.18-.83.38-1.23.61a8.52 8.52 0 0 0-2.21-.28c-.76 0-1.5.1-2.21.28-.4-.23-.81-.43-1.23-.61a.13.13 0 0 0-.14.01ZM9.2 9.5c.55 0 1 .51 1 1.14s-.45 1.14-1 1.14-1-.51-1-1.14.45-1.14 1-1.14Zm5.6 0c.55 0 1 .51 1 1.14s-.45 1.14-1 1.14-1-.51-1-1.14.45-1.14 1-1.14Z" />
+                              </svg>
+                            </div>
+                          </div>
+                    
+                          {/* TITULO */}
                           <h5 className="mt-5 min-h-[28px] flex items-center justify-center font-black text-lg">
                             Entrá al Discord
                           </h5>
-
+                    
+                          {/* DESCRIPCION */}
                           <p className="mt-2 min-h-[48px] text-sm text-zinc-500 leading-relaxed flex items-start justify-center">
-                            Hacé clic en el botón de abajo para ingresar al
-                            servidor VIP.
+                            Hacé clic en el botón de abajo para ingresar al servidor VIP.
                           </p>
                         </div>
-
+                    
                         {/* STEP 2 */}
                         <div className="relative text-center min-w-0">
+                          {/* NUMERO */}
                           <div className="h-7 flex items-center justify-center">
                             <div className="w-7 h-7 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white text-xs font-black flex items-center justify-center shadow-lg">
                               2
                             </div>
                           </div>
-
+                    
+                          {/* ICONO */}
                           <div className="mt-3 h-16 flex items-center justify-center">
                             <div className="w-16 h-16 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center">
                               <svg
@@ -1132,25 +1150,28 @@ export default function PalaceVIPLanding() {
                               </svg>
                             </div>
                           </div>
-
+                    
+                          {/* TITULO */}
                           <h5 className="mt-5 min-h-[28px] flex items-center justify-center font-black text-lg">
                             Enviá tu comprobante
                           </h5>
-
+                    
+                          {/* DESCRIPCION */}
                           <p className="mt-2 min-h-[48px] text-sm text-zinc-500 leading-relaxed flex items-start justify-center">
-                            En el canal indicado, enviá tu comprobante de
-                            pago.
+                            En el canal indicado, enviá tu comprobante de pago.
                           </p>
                         </div>
-
+                    
                         {/* STEP 3 */}
                         <div className="relative text-center min-w-0">
+                          {/* NUMERO */}
                           <div className="h-7 flex items-center justify-center">
                             <div className="w-7 h-7 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white text-xs font-black flex items-center justify-center shadow-lg">
                               3
                             </div>
                           </div>
-
+                    
+                          {/* ICONO */}
                           <div className="mt-3 h-16 flex items-center justify-center">
                             <div className="w-16 h-16 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center">
                               <svg
@@ -1168,19 +1189,20 @@ export default function PalaceVIPLanding() {
                               </svg>
                             </div>
                           </div>
-
+                    
+                          {/* TITULO */}
                           <h5 className="mt-5 min-h-[28px] flex items-center justify-center font-black text-lg">
                             Esperá la verificación
                           </h5>
-
+                    
+                          {/* DESCRIPCION */}
                           <p className="mt-2 min-h-[48px] text-sm text-zinc-500 leading-relaxed flex items-start justify-center">
-                            Verificaremos tu pago en un plazo maximo de 5
-                            minutos.
+                            Verificaremos tu pago en un plazo maximo de 5 minutos.
                           </p>
                         </div>
+                    
                       </div>
                     </div>
-
                     {/* DISCORD CTA */}
                     <div className="mt-8 rounded-[2rem] border border-green-500/20 bg-green-500/[0.04] p-6 md:p-7 text-center shadow-[0_0_40px_rgba(34,197,94,0.05)]">
                       <div className="text-sm text-zinc-400">
