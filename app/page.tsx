@@ -342,10 +342,6 @@ const previewChannels = [
           {/* LEFT */}
           <div>
             {/* BADGE */}
-            <div className="inline-flex items-center gap-3 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/10 backdrop-blur-xl px-5 py-3 text-sm text-fuchsia-200 mb-8 shadow-lg shadow-fuchsia-500/10">
-              <div className="w-2 h-2 rounded-full bg-fuchsia-400 animate-pulse" />
-              Todas las famosas de Argentina
-            </div>
 
             {/* TITLE */}
             <h1 className="text-3xl leading-tight md:text-6xl font-black tracking-tight">
@@ -395,8 +391,6 @@ const previewChannels = [
 
                   setPreviewTimer(timer)
                 }}
-                className="group relative overflow-hidden rounded-[2rem] border border-fuchsia-500/20 bg-white/[0.04] backdrop-blur-0 px-10 py-6 text-lg font-semibold hover:bg-white/[0.08] transition-all"              >
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[radial-gradient(circle_at_top,rgba(217,70,239,0.25),transparent_60%)]" />
 
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Ver contenido
@@ -423,16 +417,6 @@ const previewChannels = [
               {/* DISCORD TOP */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-black/40">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-violet-700 flex items-center justify-center font-black">
-                    P
-                  </div>
-
-                  <div>
-                    <div className="font-bold text-lg">PALACE VIP</div>
-                    <div className="text-xs text-zinc-500">
-                      servidor privado • acceso premium
-                    </div>
-                  </div>
                 </div>
 
                 <div className="text-right">
@@ -899,17 +883,9 @@ const previewChannels = [
                   <div className="text-2xl font-black">
                     {selectedChannel}
                   </div>
-
-                  <div className="text-sm text-zinc-500 mt-1 flex items-center gap-1">
-                    <TextImage text="contenido" fontSize={14} color="#71717a" /> <TextImage text="premium" fontSize={14} color="#71717a" /> privado
-                  </div>
                 </div>
 
                 <div className="flex items-center gap-3 text-sm text-zinc-500">
-                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  237 viendo ahora
-                </div>
-
               </div>
 
               {/* MAIN */}
