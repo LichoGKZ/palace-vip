@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import TextImage from '../components/TextImage'
 import Image from 'next/image'
-import BigTextImage from './components/BigTextImage'
+import BigTextImage from '../components/BigTextImage'
 import lockIcon from '@/public/lock.png'
 
 const VIPText = () => (
