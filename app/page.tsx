@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
-const DISCORD_INVITE = 'https://discord.gg/mmQnSKxXnz'
-const DISCORD_INVITE_TEXT = 'discord.gg/mmQnSKxXnz'
+const DISCORD_INVITE = 'https://discord.gg/WDjFzx67ha'
+const DISCORD_INVITE_TEXT = 'discord.gg/WDjFzx67ha'
 
 const canales = [
   'sol-perez',
