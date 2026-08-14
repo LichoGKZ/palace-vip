@@ -1,10 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import TextImage from './components/TextImage'
-import BigTextImage from './components/BigTextImage'
-import Image from 'next/image'
-import lockIcon from '@/public/lock.png'
+import TextImage from '../components/TextImage'
+import BigTextImage from '../components/BigTextImage'
+import Image from '.next/image'
+import lockIcon from '../public/lock.png'
 
 const VIPText = () => (
   <TextImage
