@@ -1,3 +1,5 @@
-# Frontend review scope
+<!-- BEGIN:nextjs-agent-rules -->
+# This is NOT the Next.js you know
 
-Treat this repository as a neutral frontend fixture. Focus exclusively on frontend engineering, responsive behavior, accessibility, and performance.
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+<!-- END:nextjs-agent-rules -->
