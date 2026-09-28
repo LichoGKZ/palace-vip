@@ -1,31 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import MetaPixel from "./MetaPixel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  viewportFit: "cover",
+  viewportFit: "cover", // habilita env(safe-area-inset-*) en iOS
   colorScheme: "dark",
+  themeColor: "#0a0a0a",
 };
 
 export const metadata: Metadata = {
   title: "Palace",
   description: "Mas que contenido",
   other: {
-    'facebook-domain-verification': 'ie4mj0zf35uo1zv8siv5bq7xwe4uxn',
+    "facebook-domain-verification": "ie4mj0zf35uo1zv8siv5bq7xwe4uxn",
   },
 };
 
@@ -35,21 +31,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable}`}
-    >
-      <body>
-        <Script id="error-shield" strategy="beforeInteractive">
-          {`
-            window.addEventListener('error', function(e) {
-              e.stopImmediatePropagation();
-            }, true);
-          `}
-        </Script>
-
+    <html lang="es-AR" className={geistSans.variable}>
+      <body className="bg-background font-sans text-foreground antialiased">
         <MetaPixel />
-
         {children}
       </body>
     </html>
