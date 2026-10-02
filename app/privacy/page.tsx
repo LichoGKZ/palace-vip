@@ -105,7 +105,7 @@ export default function PalaceVIPLanding() {
 
   const copyAlias = async () => {
     try {
-      await navigator.clipboard.writeText('licho380.macro')
+      await navigator.clipboard.writeText('licho380.uala')
 
       setAliasCopied(true)
 
@@ -753,7 +753,7 @@ export default function PalaceVIPLanding() {
                             </div>
                       
                             <div className="mt-2 text-2xl font-black tracking-wide">
-                              licho380.macro
+                              licho380.uala
                             </div>
                           </div>
                       
