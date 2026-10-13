@@ -129,7 +129,7 @@ export default function PalaceVIPLanding() {
 
     if (window.fbq) {
       window.fbq('track', 'AddPaymentInfo', {
-        value: 4800,
+        value: 5500,
         currency: 'ARS',
         content_name: 'PALACE ' + String.fromCharCode(86, 73, 80),
         content_type: 'product',
@@ -156,7 +156,7 @@ export default function PalaceVIPLanding() {
           'track',
           'Purchase',
           {
-            value: 4800,
+            value: 5500,
             currency: 'ARS',
             content_name: 'PALACE ' + String.fromCharCode(86, 73, 80),
             content_type: 'product',
@@ -654,7 +654,7 @@ export default function PalaceVIPLanding() {
 
                           if (window.fbq) {
                             window.fbq('track', 'InitiateCheckout', {
-                              value: 4800,
+                              value: 5500,
                               currency: 'ARS',
                             })
                           }
